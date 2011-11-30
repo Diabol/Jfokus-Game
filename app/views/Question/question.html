@@ -6,31 +6,36 @@
 </div>
 #{/ifErrors}
 
-<form action="@{Question.validate()}" method="GET">
-    <fieldset>
-        <legend>Question</legend>
-        ${question}
-        <div class="field">
-            <label id="answer1" value="${answer1}"/>
-            <input type="hidden" value="${question}"/>
-            <input type="hidden" value="${answer}"/>
+<fieldset>
+    <legend>Question</legend>
+    ${question}
+    <div class="field">
+        <form action="@{Question.validate()}" method="GET">
+            <input type="hidden" name="question" value="${question}"/>
+            <input type="hidden" name="answer" value="${answer1}"/>
             <input type="submit" class="submit" value="${answer1}"/>
-        </div>
-        <div class="field">
-            <label id="answer2" value="${params.answer2}"/>
-            <input type="hidden" value="${question}"/>
-            <input type="hidden" value="${answer2}"/>
+        </form>
+    </div>
+    <div class="field">
+        <form action="@{Question.validate()}" method="GET">
+            <input type="hidden" name="question" value="${question}"/>
+            <input type="hidden" name="answer" value="${answer2}"/>
             <input type="submit" class="submit" value="${answer2}"/>
-        </div>
-        <div class="field">
-            <label id="answer3" value="${params.answer3}"/>
-            <input type="hidden" value="${answer3}"/>
+        </form>
+    </div>
+    <div class="field">
+        <form action="@{Question.validate()}" method="GET">
+            <input type="hidden" name="question" value="${question}"/>
+            <input type="hidden" name="answer" value="${answer3}"/>
             <input type="submit" class="submit" value="${answer3}"/>
-        </div>
-        <div class="field">
-            <label id="answer4" value="${params.answer4}"/>
-            <input type="hidden" value="${answer4}"/>
+        </form>
+    </div>
+    <div class="field">
+        <form action="@{Question.validate()}" method="GET">
+            <input type="hidden" name="question" value="${question}"/>
+            <input type="hidden" name="answer" value="${answer4}"/>
             <input type="submit" class="submit" value="${answer4}"/>
-        </div>
-    </fieldset>
+        </form>
+    </div>
+</fieldset>
 </form>
