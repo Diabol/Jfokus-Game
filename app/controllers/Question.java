@@ -19,7 +19,7 @@ public class Question extends Controller {
     }
 
     public static void validate(@Required String question, @Required String answer) {
-        System.out.println("Q: " + question + ", A: " + answer);
+        System.out.println(System.currentTimeMillis() + "\tQ: " + question + ", A: " + answer);
         
         question();
     }
