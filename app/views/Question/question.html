@@ -1,0 +1,36 @@
+<h1>Question</h1>
+
+#{ifErrors}
+<div class="error">
+    <h2>Wrong answer!</h2>
+</div>
+#{/ifErrors}
+
+<form action="@{Question.validate()}" method="GET">
+    <fieldset>
+        <legend>Question</legend>
+        ${question}
+        <div class="field">
+            <label id="answer1" value="${answer1}"/>
+            <input type="hidden" value="${question}"/>
+            <input type="hidden" value="${answer}"/>
+            <input type="submit" class="submit" value="${answer1}"/>
+        </div>
+        <div class="field">
+            <label id="answer2" value="${params.answer2}"/>
+            <input type="hidden" value="${question}"/>
+            <input type="hidden" value="${answer2}"/>
+            <input type="submit" class="submit" value="${answer2}"/>
+        </div>
+        <div class="field">
+            <label id="answer3" value="${params.answer3}"/>
+            <input type="hidden" value="${answer3}"/>
+            <input type="submit" class="submit" value="${answer3}"/>
+        </div>
+        <div class="field">
+            <label id="answer4" value="${params.answer4}"/>
+            <input type="hidden" value="${answer4}"/>
+            <input type="submit" class="submit" value="${answer4}"/>
+        </div>
+    </fieldset>
+</form>
