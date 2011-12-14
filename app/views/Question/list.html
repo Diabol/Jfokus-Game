@@ -1,0 +1,22 @@
+#{extends 'main.html' /}
+<h1>Questions</h1>
+#{if questions.size() > 0}
+    #{list items:questions, as:'question'}
+        <div>
+            <span>${question.id}: ${question.text}</span><br/>
+            #{if questions.answers.size() > 0}
+                #{list items:questions.answers, as:'answer'}
+                <span>${answer.id}: ${answer.text} (${answer.correct}</span><br/>
+                #{/list}
+            #{/if}
+            #{else}
+            No answers...
+            #{/else}
+        </div>
+    #{/list}
+#{/if}
+#{else}
+    <div class="empty">
+        There are currently no questions in the database.
+    </div>
+#{/else}
