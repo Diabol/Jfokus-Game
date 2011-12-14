@@ -1,5 +1,6 @@
 package controllers;
 
+import java.util.List;
 import play.data.validation.Required;
 import play.mvc.Controller;
 
@@ -18,6 +19,11 @@ public class Question extends Controller {
         String answer4 = "4";
 
         render(question, answer1, answer2, answer3, answer4);
+    }
+    
+    public static void list() {
+        List<models.Question> questions = models.Question.findAll();
+        render(questions);
     }
 
     public static void validate(@Required String question, @Required String answer) {

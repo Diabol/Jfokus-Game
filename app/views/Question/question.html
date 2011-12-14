@@ -1,4 +1,5 @@
-<h1>Question</h1>
+#{extends 'main.html' /}
+<h1 onClick="new Effect.Highlight(this, { startcolor: '#ffff99', endcolor: '#ffffff' });">Question</h1>
 
 <div class="status">
     <h2>${status}</h2>
@@ -7,11 +8,11 @@
 <fieldset>
     <legend>Question</legend>
     ${question}
-    <div class="field">
+    <div "class="field">
         <form action="@{Question.validate()}" method="GET">
             <input type="hidden" name="question" value="${question}"/>
             <input type="hidden" name="answer" value="${answer1}"/>
-            <input type="submit" class="submit" value="${answer1}"/>
+            <input type="submit" class="submit" value="${answer1}" />
         </form>
     </div>
     <div class="field">

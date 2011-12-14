@@ -9,7 +9,7 @@ import play.db.jpa.Model;
  * @author andreas
  */
 @Entity
-class Answer extends Model {
+public class Answer extends Model {
     public String text;
     public boolean correct;
     @ManyToOne

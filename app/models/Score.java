@@ -10,7 +10,7 @@ import play.db.jpa.Model;
  * @author andreas
  */
 @Entity
-class Score extends Model {
+public class Score extends Model {
     public int numberOfAnswers;
     public int numberOfCorrectAnswers;
     public int numberOfIncorrectAnswers;

@@ -11,7 +11,7 @@ import play.db.jpa.Model;
  * @author andreas
  */
 @Entity
-class Question extends Model {
+public class Question extends Model {
     public String text;
     @OneToMany(mappedBy="question", cascade=CascadeType.ALL)
     public Set<Answer> answers;
