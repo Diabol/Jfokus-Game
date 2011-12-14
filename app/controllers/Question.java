@@ -10,7 +10,8 @@ import java.util.Random;
  */
 public class Question extends Controller {
 
-    public static void question() {
+    // TODO: To fetch next question
+    public static void question(final String playerId) {
         String question = "Q";
         String answer1 = "1";
         String answer2 = "2";
@@ -20,6 +21,7 @@ public class Question extends Controller {
         render(question, answer1, answer2, answer3, answer4);
     }
 
+    // TODO: Rename method (cascade into html/routes etc)
     public static void validate(@Required String question, @Required String answer) {
         System.out.println(System.currentTimeMillis() + "\tQ: " + question + ", A: " + answer);
 
@@ -31,6 +33,9 @@ public class Question extends Controller {
         } else {
             status = "wrong! correct answer was: " + correctAnswer;
         }
+        // TODO: Handle user input/answer via GameEngine/Session
+
+        // TODO: Get next question from GameSession
         question = "New Q " + System.currentTimeMillis();
         String answer1 = "1";
         String answer2 = "2";

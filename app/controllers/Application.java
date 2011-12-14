@@ -9,7 +9,7 @@ public class Application extends Controller {
         render();
     }
 
-    public static void handleSubmit(
+    public static void handleSubmit( // TODO: Rename to register player (cascade into html/routes etc)
             @Required String firstname,
             @Required String lastname,
             @Required @Email String email,
@@ -23,6 +23,10 @@ public class Application extends Controller {
         }
 
         // TODO: Persist user details
+
+        // TODO: Make game type selection (e.g. join existing game X, Y or Z)
+
+        // TODO: Register player wihtin a game session etc
 
         render(firstname, lastname, email, twitter);
     }

@@ -6,6 +6,8 @@ import controllers.Question;
  * @author <a href="mailto:tommy@diabol.se">Tommy Tynj&auml;</a>
  */
 public interface PlayerSession {
+    
+    public String getId();
 
     public void addCorrectAnswer();
 
