@@ -1,18 +1,14 @@
 #{extends 'main.html' /}
 
-<h1>User created !</h1>
+<h4>Successfully registered!</h4>
 
-<p>
-	<strong>First name</strong> is ${firstname}
-</p>
-<p>
-	<strong>Last name</strong> is ${lastname}
-</p>
-<p>
-	<strong>Email</strong> is ${email}
-</p>
-<p>
-	<strong>Twitter</strong> is ${twitter}
-</p>
+<div class="field">
+    <label>${firstname} ${lastname}</label><br/>
+    <label>${email}</label><br/>
+    <label>@${twitter}</label><br/>
+</div>
 
-#{a @Application.index()}Back#{/a}
+<br/>
+<br/>
+
+<strong>#{a @Application.index()}Back#{/a}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{a @Question.question()}First question#{/a}</strong>

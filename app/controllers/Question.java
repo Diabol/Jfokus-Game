@@ -1,5 +1,6 @@
 package controllers;
 
+import java.util.Date;
 import java.util.List;
 import play.data.validation.Required;
 import play.mvc.Controller;
@@ -11,13 +12,15 @@ import java.util.Random;
  */
 public class Question extends Controller {
 
+    public static final String ANSWER_CANADA = "That canadian guy";
+
     // TODO: To fetch next question
     public static void question(final String playerId) {
-        String question = "Q";
-        String answer1 = "1";
-        String answer2 = "2";
-        String answer3 = "3";
-        String answer4 = "4";
+        String question = "Who doesn't like sauce?";
+        String answer1 = "Peter";
+        String answer2 = "Daniel";
+        String answer3 = "Andreas";
+        String answer4 = ANSWER_CANADA;
 
         render(question, answer1, answer2, answer3, answer4);
     }
@@ -32,21 +35,19 @@ public class Question extends Controller {
         System.out.println(System.currentTimeMillis() + "\tQ: " + question + ", A: " + answer);
 
         String status;
-        String correctAnswer = Integer.toString(new Random().nextInt(4) + 1);
-        System.out.println("Correct answer was: " + correctAnswer);
-        if (answer.equalsIgnoreCase(correctAnswer)) {
-            status = "correct!";
+        if (answer.equalsIgnoreCase(ANSWER_CANADA)) {
+            status = "Correct!";
         } else {
-            status = "wrong! correct answer was: " + correctAnswer;
+            status = "Wrong answer!";
         }
         // TODO: Handle user input/answer via GameEngine/Session
 
         // TODO: Get next question from GameSession
-        question = "New Q " + System.currentTimeMillis();
-        String answer1 = "1";
-        String answer2 = "2";
-        String answer3 = "3";
-        String answer4 = "4";
+        question = "Who still doesn't like sauce (@ " + new Date() + ")";
+        String answer1 = "Patrik";
+        String answer2 = "Tommy";
+        String answer3 = ANSWER_CANADA;
+        String answer4 = "Per";
 
         renderTemplate("Question/question.html", question, answer1, answer2, answer3, answer4, status);
     }

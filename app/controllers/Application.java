@@ -13,7 +13,7 @@ public class Application extends Controller {
             @Required String firstname,
             @Required String lastname,
             @Required @Email String email,
-            @Required @Equals("email") String emailConfirm,
+            //@Required @Equals("email") String emailConfirm,
             @Required String twitter,
             @Required @IsTrue boolean termsOfUse) {
 
