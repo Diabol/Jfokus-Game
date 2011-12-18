@@ -1,39 +1,36 @@
 #{extends 'main.html'/}
-<h1>Question</h1>
-
+<br/>
+<h1 class="question">${question}</h1>
+<br/>
+<div class="field">
+    <form action="@{Question.validate()}" method="GET">
+        <input type="hidden" name="question" value="${question}"/>
+        <input type="hidden" name="answer" value="${answer1}"/>
+        <input type="submit" class="answer" value="${answer1}" />
+    </form>
+</div>
+<div class="field">
+    <form action="@{Question.validate()}" method="GET">
+        <input type="hidden" name="question" value="${question}"/>
+        <input type="hidden" name="answer" value="${answer2}"/>
+        <input type="submit" class="answer" value="${answer2}"/>
+    </form>
+</div>
+<div class="field">
+    <form action="@{Question.validate()}" method="GET">
+        <input type="hidden" name="question" value="${question}"/>
+        <input type="hidden" name="answer" value="${answer3}"/>
+        <input type="submit" class="answer" value="${answer3}"/>
+    </form>
+</div>
+<div class="field">
+    <form action="@{Question.validate()}" method="GET">
+        <input type="hidden" name="question" value="${question}"/>
+        <input type="hidden" name="answer" value="${answer4}"/>
+        <input type="submit" class="answer" value="${answer4}"/>
+    </form>
+</div>
+<br/>
 <div class="status">
     <h2>${status}</h2>
 </div>
-
-<fieldset>
-    <legend>Question</legend>
-    ${question}
-    <div "class="field">
-        <form action="@{Question.validate()}" method="GET">
-            <input type="hidden" name="question" value="${question}"/>
-            <input type="hidden" name="answer" value="${answer1}"/>
-            <input type="submit" class="submit" value="${answer1}" />
-        </form>
-    </div>
-    <div class="field">
-        <form action="@{Question.validate()}" method="GET">
-            <input type="hidden" name="question" value="${question}"/>
-            <input type="hidden" name="answer" value="${answer2}"/>
-            <input type="submit" class="submit" value="${answer2}"/>
-        </form>
-    </div>
-    <div class="field">
-        <form action="@{Question.validate()}" method="GET">
-            <input type="hidden" name="question" value="${question}"/>
-            <input type="hidden" name="answer" value="${answer3}"/>
-            <input type="submit" class="submit" value="${answer3}"/>
-        </form>
-    </div>
-    <div class="field">
-        <form action="@{Question.validate()}" method="GET">
-            <input type="hidden" name="question" value="${question}"/>
-            <input type="hidden" name="answer" value="${answer4}"/>
-            <input type="submit" class="submit" value="${answer4}"/>
-        </form>
-    </div>
-</fieldset>
