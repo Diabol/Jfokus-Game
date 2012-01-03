@@ -12,12 +12,28 @@ import play.db.jpa.*;
  */
 @Entity
 public class Player extends Model {
+    public String firstName;
+    public String lastName;
     public String email;
-    public String nic;
+    public String twitter;
 
-    public Player(String email, String nic) {
+    public Player() {
+    }
+    
+    public Player(final String firstName, final String lastName, final String email, final String twitterHandle) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
-        this.nic = nic;
+        this.twitter = twitterHandle;
     }
 
+    @Override
+    public String toString() {
+        return "Player{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", twitter='" + twitter + '\'' +
+                '}';
+    }
 }

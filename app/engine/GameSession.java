@@ -1,6 +1,7 @@
 package engine;
 
 import controllers.Question;
+import models.Player;
 
 import java.util.List;
 
@@ -17,7 +18,7 @@ public interface GameSession {
 
     public List<Question> loadQuestions();
     
-    public void registerPlayer();
+    public void registerPlayer(final Player player);
     
     public void start();
 
