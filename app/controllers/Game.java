@@ -4,7 +4,7 @@ import play.data.validation.Required;
 import play.mvc.Controller;
 
 /**
- * @author <a href="mailto:tynjae@gmail.com">Tommy Tynj&auml;</a>
+ * @author <a href="mailto:tommy@diabol.se">Tommy Tynj&auml;</a>
  */
 public class Game extends Controller {
 

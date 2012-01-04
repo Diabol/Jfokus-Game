@@ -1,5 +1,6 @@
 package controllers;
 
+import models.Player;
 import play.data.validation.*;
 import play.mvc.Controller;
 
@@ -13,7 +14,7 @@ public class Application extends Controller {
             @Required String firstname,
             @Required String lastname,
             @Required @Email String email,
-            @Required @Equals("email") String emailConfirm,
+            //@Required @Equals("email") String emailConfirm,
             @Required String twitter,
             @Required @IsTrue boolean termsOfUse) {
 
@@ -22,7 +23,8 @@ public class Application extends Controller {
             render("@index");
         }
 
-        // TODO: Persist user details
+        Player newPlayer = new Player(firstname, lastname, email, twitter);
+        Player.em().persist(newPlayer);
 
         // TODO: Make game type selection (e.g. join existing game X, Y or Z)
 
