@@ -1,0 +1,25 @@
+# you describe your data using the YAML notation here
+# and then load them using Fixtures.load("data.yml")
+
+Player(daniel):
+  name : Daniel Fröding
+  email : test@test
+  
+Player(tommy):
+  name : Tommy
+  email : test@test
+  
+Score(1):
+    numberOfAnswers: 10
+    numberOfPoints: 100
+    player: daniel 
+
+Score(2):
+    numberOfAnswers: 10
+    numberOfPoints: 200
+    player: daniel 
+
+Score(3):
+    numberOfAnswers: 10
+    numberOfPoints: 30
+    player: tommy 

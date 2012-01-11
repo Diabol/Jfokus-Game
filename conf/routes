@@ -5,6 +5,7 @@
 # Home page
 GET     /                                       Application.index
 GET     /question                               Question.question
+GET     /score                                  Scoreboard.index
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

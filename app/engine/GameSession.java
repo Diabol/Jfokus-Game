@@ -1,6 +1,6 @@
 package engine;
 
-import controllers.Question;
+import models.Question;
 import models.Player;
 
 import java.util.List;

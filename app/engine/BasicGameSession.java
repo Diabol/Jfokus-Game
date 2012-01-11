@@ -1,10 +1,12 @@
 package engine;
 
-import controllers.Question;
+import java.util.ArrayList;
+import models.Question;
 import models.Player;
 
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 import java.util.logging.Logger;
 
@@ -24,9 +26,15 @@ public class BasicGameSession implements GameSession {
         return null;
     }
 
-    @Override
     public List<Question> loadQuestions() {
-        return null;
+        List<Question> questions = models.Question.findAll();
+        Random rnd = new Random();
+        List<Question> randomList = new ArrayList<Question>(10);
+        int size = Math.min(10, questions.size()); // if there are less than 10 questions in the db
+        for (int i = 0; i < size; i++){
+            randomList.add(questions.get(rnd.nextInt(size)));
+        }
+        return randomList;
     }
 
     @Override
