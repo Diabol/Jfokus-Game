@@ -2,6 +2,7 @@ package controllers;
 
 import engine.GameEngine;
 import java.util.List;
+import javax.inject.Inject;
 import models.Player;
 import play.Logger;
 import play.data.validation.*;
@@ -9,12 +10,15 @@ import play.i18n.Messages;
 import play.mvc.Controller;
 
 public class Application extends Controller {
+    
+    @Inject
+    static GameEngine gameEngine;
 
     public static void index() {
         render();
     }
 
-    public static void registerPlayer(
+    public static void registerPlayer (
             @Required String name,
             @Required @Email String email,
             String twitter,
@@ -41,13 +45,13 @@ public class Application extends Controller {
             }
         }
         
+        String gameSessionId = gameEngine.registerPlayer(player);
         
-
         // TODO: Make game type selection (e.g. join existing game X, Y or Z)
 
         // TODO: Register player wihtin a game session etc
 
-        render(name, email, twitter);
+        render("@waitToPlay",gameSessionId);
     }
 
     private static boolean isSamePlayer(String name, String email, String twitter, Player player) {

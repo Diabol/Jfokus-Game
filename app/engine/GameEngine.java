@@ -10,4 +10,6 @@ import models.Player;
 public interface GameEngine {
 
     public String registerPlayer(final Player player);
+    
+    public boolean hasSessionStarted(String gameSessionId);
 }

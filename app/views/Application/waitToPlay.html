@@ -1,0 +1,13 @@
+#{extends 'main.html' /}
+<!-- TODO this reload script sucks.... fix it-->
+<script type="text/javascript">
+    var check = #{jsAction @Game.hasStarted(':gameSessionId') /}
+    var reload = function(){
+        check({gameSessionId: ${gameSessionId}}});
+    };
+    setTimeout(reload, 1000);
+</script>
+<div class="field">
+    <label>Sucessfully registred, waiting for game to start...</label><br/>
+    ${timeStamp}
+</div>
