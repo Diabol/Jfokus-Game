@@ -1,0 +1,10 @@
+#{extends 'main.html' /}
+<h1>Current score</h1>
+#{if scores.size() > 0}
+    #{list items:scores, as:'score'}
+    <div class="status">
+    ${score.player.name} - ${score.numberOfPoints}
+    </div>
+   #{/list}
+#{/if}
+
