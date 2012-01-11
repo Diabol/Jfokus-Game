@@ -21,8 +21,8 @@ public class Question extends Controller {
         String answer2 = "Daniel";
         String answer3 = "Andreas";
         String answer4 = ANSWER_CANADA;
-
-        render(question, answer1, answer2, answer3, answer4);
+        String score = "12/18";
+        render(question, answer1, answer2, answer3, answer4, score);
     }
     
     public static void list() {
@@ -34,14 +34,16 @@ public class Question extends Controller {
     public static void validate(@Required String question, @Required String answer) {
         System.out.println(System.currentTimeMillis() + "\tQ: " + question + ", A: " + answer);
 
-        String status;
+        String correct;
         if (answer.equalsIgnoreCase(ANSWER_CANADA)) {
-            status = "Correct!";
+            correct = "Correct answer!";
         } else {
-            status = "Wrong answer!";
+            correct = "Wrong answer!";
         }
         // TODO: Handle user input/answer via GameEngine/Session
 
+        String score = "12/18";
+        
         // TODO: Get next question from GameSession
         question = "Who still doesn't like sauce (@ " + new Date() + ")";
         String answer1 = "Patrik";
@@ -49,6 +51,6 @@ public class Question extends Controller {
         String answer3 = ANSWER_CANADA;
         String answer4 = "Per";
 
-        renderTemplate("Question/question.html", question, answer1, answer2, answer3, answer4, status);
+        renderTemplate("Question/question.html", question, answer1, answer2, answer3, answer4, correct, score);
     }
 }

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-#{set applicationName:'Jfokus 2012 Quiz' /}
 <html>
     <head>
         <title>#{get 'applicationName' /}</title>
@@ -19,8 +18,8 @@
         <div id="header">
             <table>
                 <tr>
-                    <td class="left"><img id="logo-img" src="@{'/public/images/diabol-logo.jpg'}"/></td>
-                    <td class="right"><h1>#{get 'applicationName' /}</h1></td>
+                    <td class="left"><a href="http://www.diabol.se"><img id="logo-img" src="@{'/public/images/diabol-logo.jpg'}"/></a></td>
+                    <td class="right"><a class="nostyle" href="${play.configuration.get("application.baseUrl")}"><h1>&{'application.name'}</h1></a></td>
                 </tr>
             </table>
         </div>
@@ -30,8 +29,8 @@
         <div id="footer">
             <table>
                 <tr>
-                    <td class="left">Copyright &copy; 2011 Diabol AB</td>
-                    <td class="right">version: 1.0-SNAPSHOT</td>
+                    <td class="left">&{'application.copyright'}</td>
+                    <td class="right">version: ${play.configuration.get("application.version")}</td>
                 </tr>
             </table>
         </div>

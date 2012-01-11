@@ -12,17 +12,15 @@ import play.db.jpa.*;
  */
 @Entity
 public class Player extends Model {
-    public String firstName;
-    public String lastName;
+    public String name;
     public String email;
     public String twitter;
 
     public Player() {
     }
     
-    public Player(final String firstName, final String lastName, final String email, final String twitterHandle) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Player(final String name, final String email, final String twitterHandle) {
+        this.name = name;
         this.email = email;
         this.twitter = twitterHandle;
     }
@@ -30,8 +28,7 @@ public class Player extends Model {
     @Override
     public String toString() {
         return "Player{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
+                "Name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", twitter='" + twitter + '\'' +
                 '}';

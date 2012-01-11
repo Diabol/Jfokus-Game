@@ -1,3 +1,14 @@
 # You can specialize this file for each language.
 # For example, for French create a messages.fr file
 #
+application.name=Jfokus 2012 Quiz
+application.copyright=Copyright &copy; 2011 Diabol AB
+register.name=Name
+register.email=Email
+register.twitter=Twitter
+register.termsOfUse=By checking this box and submitting this form, I agree to the terms of this game, that Diabol is allowed to store my user information and are permitted to contact me if necessary. My provided details will however not be shared to any third party without my consent.
+register.accept=I accept terms of use
+register.submit=Join game!
+error.mandatoryRegistrationFields=Please provide mandatory registration details
+error.termsOfUse=Accept to continue
+error.emailAreadyRegistred=This email adress was already registred with a different name and/or twitter

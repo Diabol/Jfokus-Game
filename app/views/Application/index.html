@@ -2,57 +2,63 @@
 
 <br/>
 
-#{form @Application.handleSubmit()}
-    <h4>User information</h4>
+#{form @Application.registerPlayer()}
     #{ifErrors}
     <div class="error">
-        Please provide mandatory user details
+        #{error 'registration' /}
     </div>
     <br/>
     #{/ifErrors}
 
-    <div class="field">
-        <label for="firstname">First name : &nbsp;</label>
-        <input id="firstname" type="text" name="firstname" size="30" value="${params.firstname}" class="#{errorClass 'firstname' /}" />
-        <span class="error">#{error 'firstname' /}</span>
-    </div>
+    <table>
+        <tr>
+            <td>
+                <label for="name">&{'register.name'}</label>
+            </td>
+            <td>
+                <input id="name" type="text" name="name" size="30" value="${params.name}" class="#{errorClass 'name' /}" />
+                <span class="error">#{error 'name' /}</span>
+            </td>
+        </tr>
+    <tr>
+        <td>
+            <label for="email">&{'register.email'}</label>
+        </td>
+        <td>
+            <input id="email" type="text" name="email" size="30" value="${params.email}" class="#{errorClass 'email' /}" />
+            <span class="error">#{error 'email' /}</span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="twitter">&{'register.twitter'}</label>
+        </td>
+        <td>
+            <input id="twitter" type="text" name="twitter" size="30" value="${params.twitter}" class="#{errorClass 'twitter' /}" />
+            <span class="error">#{error 'twitter' /}</span>
+        </td>
+    </tr>
+    </table>
 
-    <div class="field">
-        <label for="lastname">Last name : &nbsp;</label>
-        <input id="lastname" type="text" name="lastname" size="30" value="${params.lastname}" class="#{errorClass 'lastname' /}" />
-        <span class="error">#{error 'lastname' /}</span>
-    </div>
-
-    <div class="field">
-        <label for="email">Email address : &nbsp;</label>
-        <input id="email" type="text" name="email" size="30" value="${params.email}" class="#{errorClass 'email' /}" />
-        <span class="error">#{error 'email' /}</span>
-    </div>
-
-    <div class="field">
-        <label for="twitter">Twitter handle : &nbsp;</label>
-        <input id="twitter" type="text" name="twitter" size="30" value="${params.twitter}" class="#{errorClass 'twitter' /}" />
-        <span class="error">#{error 'emailConfirm' /}</span>
-    </div>
 
     <br/>
     <br/>
 
     <div class="infos">
-        By checking this box and submitting this form, I agree to the terms of this game, that Diabol is allowed to store my user information
-        and are permitted to contact me if necessary. My provided details will however not be shared to any third party without my consent.
+        &{'register.termsOfUse'}
     </div>
 
     <br/>
 
     <div class="field">
-        <label for="termsOfUse">I accept terms of use : </label>
+        <label for="termsOfUse">&{'register.accept'}</label>
         <input id="termsOfUse" type="checkbox" value="true" name="termsOfUse" #{if params.termsOfUse}checked="true"#{/if}  class="#{errorClass 'termsOfUse' /}" />
-        <span class="error">#{ifError 'termsOfUse'}Please accept terms of use#{/ifError}</span>
+        <span class="error">#{ifError 'termsOfUse'}&{'error.termsOfUse'}#{/ifError}</span>
     </div>
 
     <br/>
     <br/>
-
-    <input type="submit" class="submit" value="Join game!" />
+    <div class="field">
+        <input type="submit" class="submit" value="&{'register.submit'}" />
+    </div>
 #{/form}
