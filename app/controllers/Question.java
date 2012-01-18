@@ -15,7 +15,7 @@ public class Question extends Controller {
     public static final String ANSWER_CANADA = "That canadian guy";
 
     // TODO: To fetch next question
-    public static void question(final String playerId) {
+    public static void question() {
         String question = "Who doesn't like sauce?";
         String answer1 = "Peter";
         String answer2 = "Daniel";
