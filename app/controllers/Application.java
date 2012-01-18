@@ -29,7 +29,6 @@ public class Application extends Controller {
             Validation.addError("registration", Messages.get("error.mandatoryRegistrationFields"));
             render("@index");
         }
-        
         // Check if player is already registered
         Player player = null;
         List<Player> players = Player.find("byEmail", email).fetch();
@@ -44,14 +43,9 @@ public class Application extends Controller {
                 render("@index");
             }
         }
-        
         String gameSessionId = gameEngine.registerPlayer(player);
-        
-        // TODO: Make game type selection (e.g. join existing game X, Y or Z)
-
-        // TODO: Register player wihtin a game session etc
-
-        render("@waitToPlay",gameSessionId);
+        session.put("gameSessionId", gameSessionId);
+        redirect("/Game/waitForStart");
     }
 
     private static boolean isSamePlayer(String name, String email, String twitter, Player player) {

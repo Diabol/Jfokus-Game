@@ -1,5 +1,6 @@
 package engine;
 
+import java.util.List;
 import models.Player;
 
 /**
@@ -10,6 +11,6 @@ import models.Player;
 public interface GameEngine {
 
     public String registerPlayer(final Player player);
-    
     public boolean hasSessionStarted(String gameSessionId);
+    public List<Player> getPlayers(String gameSessionId);
 }

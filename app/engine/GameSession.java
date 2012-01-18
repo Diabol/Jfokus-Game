@@ -14,11 +14,13 @@ public interface GameSession {
      * Get the session id
      * @return the session id
      */
-    public Integer getId();
+    public Long getId();
 
     public List<Question> loadQuestions();
     
-    public void registerPlayer(final Player player);
+    public void addPlayer(final Player player);
+    
+    public List<Player> getPlayers();
     
     public void start();
 

@@ -16,6 +16,10 @@ public class Player extends Model {
     public String email;
     public String twitter;
 
+    public static Player getComputer() {
+        return find("byEmail", "computer@diabol.se").first();
+    }
+    
     public Player() {
     }
     
