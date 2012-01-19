@@ -1,6 +1,7 @@
 package engine;
 
-import controllers.Question;
+import java.util.Iterator;
+import models.Question;
 import models.Player;
 
 /**
@@ -9,6 +10,8 @@ import models.Player;
 public class BasicPlayerSession implements PlayerSession {
     
     private Player player;
+    private Iterator<Question> questionsIterator;
+    private Question currentQuestion;
 
     public BasicPlayerSession(final Player player) {
         this.player = player;
@@ -29,16 +32,25 @@ public class BasicPlayerSession implements PlayerSession {
 
     @Override
     public Question getCurrentQuestion() {
-        return null;
+        return currentQuestion;
     }
 
     @Override
     public Question getNextQuestion() {
-        return null;
+        if (questionsIterator.hasNext()) {
+            currentQuestion = questionsIterator.next();
+        } else {
+            currentQuestion = null;
+        }
+        return currentQuestion;
     }
 
     public Player getPlayer() {
         return this.player;
+    }
+
+    public void setQuestions(Iterator<Question> questionIterator) {
+        this.questionsIterator = questionIterator;
     }
     
 }

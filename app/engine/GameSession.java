@@ -4,6 +4,7 @@ import models.Question;
 import models.Player;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author <a href="mailto:tommy@diabol.se">Tommy Tynj&auml;</a>
@@ -15,8 +16,6 @@ public interface GameSession {
      * @return the session id
      */
     public Long getId();
-
-    public List<Question> loadQuestions();
     
     public void addPlayer(final Player player);
     
@@ -25,7 +24,10 @@ public interface GameSession {
     public void start();
 
     public void handleAnswer(final Integer questionId, final Integer answerId);
-
+    
+    public Question nextQuestion(String playerId);
+    
     public Scoreboard getScore();
+    
 
 }

@@ -1,6 +1,7 @@
 package engine;
 
-import controllers.Question;
+import java.util.Iterator;
+import models.Question;
 import models.Player;
 
 /**
@@ -17,6 +18,8 @@ public interface PlayerSession {
     public Question getCurrentQuestion();
     
     public Question getNextQuestion();
+    
+    public void setQuestions(Iterator<Question> questionIterator);
     
     public Player getPlayer();
 

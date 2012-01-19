@@ -1,26 +1,25 @@
 # you describe your data using the YAML notation here
 # and then load them using Fixtures.load("data.yml")
-
 Question(1):
-  text: "Who is the father of Java?"
+  text: "Who doesn't like sauce?"
   answers: [1A, 1B, 1C, 1D]
   
 Answer(1A):
-  text: " James Strachan"
+  text: "Daniel"
   correct: false
   question: 1
 
 Answer(1B):
-  text: "Martin Odersky"
+  text: "Peter"
   correct: false
   question: 1
   
 Answer(1C):
-  text: "James Gosling"
-  correct: true
+  text: "Andreas"
+  correct: false
   question: 1
   
 Answer(1D):
-  text: " Yukihiro Matsumoto"
-  correct: false
+  text: "The canadian guy"
+  correct: true
   question: 1

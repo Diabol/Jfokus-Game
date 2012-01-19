@@ -1,6 +1,7 @@
 package engine;
 
 import java.util.List;
+import java.util.Set;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
@@ -26,9 +27,9 @@ public class GameSessionTest extends UnitTest {
     
     @Test
     public void testRetrieveQuestions() {
-        BasicGameSession session = new BasicGameSession();
-        List<Question> questions = session.loadQuestions();
-        assertNotNull(questions);
+        List<Question> questions  = Question.findAll();
+        BasicGameSession session = new BasicGameSession(questions);
+        assertNotNull(session.getPlayers());
         assertEquals(1, questions.size());
         Question q = questions.get(0);
         assertEquals("Who is the father of Java?", q.text);
