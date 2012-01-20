@@ -17,6 +17,28 @@ public class Application extends Controller {
     public static void index() {
         render();
     }
+    
+    public static void mock(){
+        Player player = null;
+        List<Player> players = Player.find("byEmail", "mockedMail").fetch();
+        String name = "Test player";
+        String email = "test@test.com";
+        String twitter = "twitter";
+        if (players.isEmpty()) {
+            player = new Player(name, email, twitter);
+            Player.em().persist(player);
+        } else {
+            if (players.size()==1 && isSamePlayer(name,email,twitter, players.get(0))) {
+                player = players.get(0);
+            } else {
+                Validation.addError("registration", Messages.get("error.emailAreadyRegistred"));
+                render("@index");
+            }
+        }
+        String gameSessionId = gameEngine.registerPlayer(player);
+        session.put("gameSessionId", gameSessionId);
+        redirect("/Game/waitForStart");
+    }
 
     public static void registerPlayer (
             @Required String name,

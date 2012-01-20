@@ -1,11 +1,27 @@
 #{extends 'main.html' /}
 <br/>
 <h1>&{'game.start.title', player1.name, player2.name}</h1><br/>
-<h2 id="countDown">10</h2>
-<h3>seconds to start</h3>
+<h2>Game starts in</h2>
+<h3 id="countDown" style="font-size: 64px">10</h3>
 <script type="text/javascript">
-    var secondsToStart = 10;
+    var secondsToStart = $("#countDown").text();
+    var animationTime = 1000;
     (function countDown() {
-      
+        $("#countDown").fadeIn(animationTime/2 - 100, function(){
+            $("#countDown").fadeOut(animationTime/2 - 100, function(){
+                            $("#countDown").text(--secondsToStart);    
+                        }); 
+        });
+        if(secondsToStart < 1){
+            $("#countDown").text("Now!");
+            $("#countDown").fadeIn(animationTime*2, function(){
+                $("#countDown").fadeOut(animationTime*2, function(){
+                   window.location="/question/question";
+                });
+            });
+        }
+        else {
+            setTimeout(countDown, animationTime);
+        }
     })();
 </script>
