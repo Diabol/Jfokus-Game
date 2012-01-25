@@ -54,16 +54,17 @@ public class Application extends Controller {
         }
         // Check if player is already registered
         Player player = null;
-        List<Player> players = Player.find("byEmail", email).fetch();
+        List<Player> players = Player.find("byEmail", email.toLowerCase()).fetch();
         if (players.isEmpty()) {
-            player = new Player(name, email, twitter);
+            player = new Player(name, email.toLowerCase(), twitter);
             Player.em().persist(player);
         } else {
-            if (players.size()==1 && isSamePlayer(name,email,twitter, players.get(0))) {
+            if (players.size() == 1 && isSamePlayer(name, email, twitter, players.get(0))) {
                 player = players.get(0);
             } else {
                 Validation.addError("registration", Messages.get("error.emailAreadyRegistred"));
                 render("@index");
+                return;
             }
         }
         String gameSessionId = gameEngine.registerPlayer(player);

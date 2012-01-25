@@ -2,7 +2,7 @@
 # For example, for French create a messages.fr file
 #
 application.name=Jfokus 2012 Quiz
-application.copyright=Copyright &copy; 2011 Diabol AB
+application.copyright=Copyright &copy; 2012 Diabol AB
 register.name=Name
 register.email=Email
 register.twitter=Twitter

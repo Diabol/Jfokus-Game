@@ -1,16 +1,11 @@
 package engine;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import models.Question;
-import models.Player;
-
-import java.util.LinkedHashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
 import models.GameRound;
+import models.Player;
+import models.Question;
 import models.Score;
+
+import java.util.*;
 
 /**
  * @author <a href="mailto:tommy@diabol.se">Tommy Tynj&auml;</a>
@@ -24,15 +19,13 @@ public class BasicGameSession implements GameSession {
     public BasicGameSession(List<Question> questions) {
         gameRound = new GameRound(new HashSet<Question>(questions), null, 180);
         GameRound.em().persist(gameRound);
-        play.Logger.info("Started BasicGameSession with " + questions.size()+" number of questions");
+        play.Logger.info("Started BasicGameSession with " + questions.size() + " number of questions");
     }
 
     @Override
     public Long getId() {
         return gameRound.getId();
     }
-
-    
 
     @Override
     public void addPlayer(final Player player) {
@@ -47,7 +40,7 @@ public class BasicGameSession implements GameSession {
         Score score = new Score();
         score.player = player;
         score.gameRound = gameRound;
-        if (gameRound.scores==null) {
+        if (gameRound.scores == null) {
             gameRound.scores = new HashSet<Score>();
         }
         gameRound.scores.add(score);
@@ -61,7 +54,7 @@ public class BasicGameSession implements GameSession {
         }
         return playerList;
     }
-    
+
     @Override
     public void start() {
     }
@@ -78,20 +71,20 @@ public class BasicGameSession implements GameSession {
 
     @Override
     public List<Score> getScores() {
-        return new ArrayList(gameRound.scores);
+        return new ArrayList<Score>(gameRound.scores);
     }
 
     public Question nextQuestion(String playerId) {
-        play.Logger.info("Getting next question for player: "+playerId);
+        play.Logger.info("Getting next question for player: " + playerId);
         PlayerSession session = getPlayerSession(playerId);
         Question question = null;
-        if (session!=null) {
+        if (session != null) {
             question = session.getNextQuestion();
         }
-        play.Logger.info("Next question is: "+(question==null?"null":question.text));
+        play.Logger.info("Next question is: " + (question == null ? "null" : question.text));
         return question;
     }
-    
+
     private PlayerSession getPlayerSession(String playerId) {
         for (PlayerSession session : playerSessions) {
             if (session.getPlayer().id.equals(Long.parseLong(playerId))) {

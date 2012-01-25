@@ -6,7 +6,7 @@ import models.Player;
 import models.Score;
 
 /**
- * Some kind of bootstrapping features for GameSessions
+ * Interface for a typical game engine core
  *
  * @author <a href="mailto:tommy@diabol.se">Tommy Tynj&auml;</a>
  */
