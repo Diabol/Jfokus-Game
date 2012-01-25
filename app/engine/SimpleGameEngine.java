@@ -11,28 +11,29 @@ import java.util.List;
 import java.util.Random;
 import java.util.Set;
 import models.Player;
-import org.apache.log4j.Logger;
+import models.Score;
 
 /**
  *
  * @author andreas
  */
 public class SimpleGameEngine implements GameEngine {
-    private static final Logger LOG = Logger.getLogger("Game");
     
     private GameSession gameSession;
-
+    
     public String registerPlayer(Player player) {
+        play.Logger.info("SimpleGameEnging: " + this.hashCode());
         if (gameSession==null) {
-            LOG.info("Creating new GameSession");
+            play.Logger.info("Creating new GameSession");
             gameSession = new BasicGameSession(loadQuestions(10));
         }
         gameSession.addPlayer(player);
-        LOG.info("Registred player: "+player.name);
+        play.Logger.info("Registred player: "+player.name);
         return ""+gameSession.getId().longValue();
     }
 
     public boolean hasSessionStarted(String gameSessionId) {
+        play.Logger.info("SimpleGameEnging: " + this.hashCode());
         boolean doStart = new Random(System.currentTimeMillis()).nextBoolean();
         if (doStart && gameSession.getPlayers().size()<2) {
             gameSession.addPlayer(Player.getComputer());
@@ -45,19 +46,44 @@ public class SimpleGameEngine implements GameEngine {
     }
 
     public Question getNextQuestion(String gameSessionId, String playerId) {
+        play.Logger.info("SimpleGameEnging: " + this.hashCode());
         return gameSession.nextQuestion(playerId);
     }
     
+    public boolean answerQuestion(String gameSessionId, String playerId, Long questionId, Long answerId) {
+        play.Logger.info("SimpleGameEnging: " + this.hashCode());
+        models.Question question = models.Question.findById(questionId);
+        models.Answer answer = models.Answer.findById(answerId);
+        boolean correct = answer.equals(question.getCorrectAnswer());
+        gameSession.handleAnswer(playerId, question, correct);
+        return correct;
+    }
+    
+    public List<Score> getScores(String gameSessionId) {
+        return gameSession.getScores();
+    }
+
+    
     private List<Question> loadQuestions(int numberOfQuestions) {
-        LOG.info("Loading " + numberOfQuestions + " questions");
+        play.Logger.info("Loading " + numberOfQuestions + " questions");
         List<Question> allQuestions  = Question.findAll();
-        LOG.info("Total number of quetions in DB: "+allQuestions.size());
-        Random rnd = new Random(System.currentTimeMillis());
-        List<Question> randomList = new ArrayList<Question>(Math.min(numberOfQuestions, allQuestions.size()));
-        for (int i = 0; i < randomList.size(); i++){
-            randomList.add(allQuestions.get(rnd.nextInt(randomList.size())));
+        play.Logger.info("Total number of quetions in DB: "+allQuestions.size());
+        List<Question> questions = null;
+        if (allQuestions.size() <= numberOfQuestions) {
+            questions = allQuestions;
+        } else {
+            Random rnd = new Random(System.currentTimeMillis());
+            List<Question> randomList = new ArrayList<Question>(Math.min(numberOfQuestions, allQuestions.size()));
+            for (int i = 0; i < randomList.size(); i++){
+                randomList.add(allQuestions.get(rnd.nextInt(randomList.size())));
+            }
+            questions = randomList;
         }
-        return randomList;
+        return questions;
+    }
+
+    public void stopGameSession(String gameSessionId) {
+        gameSession.stop();
     }
     
 }

@@ -19,12 +19,5 @@ public class Score extends Model {
     public GameRound gameRound;
     @ManyToOne
     public Player player;
-    
-    public Score(int numberOfAnswers, int numberOfCorrectAnswers, int numberOfIncorrectAnswers, int numberOfPoints, GameRound gameRound, Player player) {
-        this.numberOfAnswers = numberOfAnswers;
-        this.numberOfCorrectAnswers = numberOfCorrectAnswers;
-        this.numberOfIncorrectAnswers = numberOfIncorrectAnswers;
-        this.numberOfPoints = numberOfPoints;
-    }
-    
+        
 }

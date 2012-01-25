@@ -5,6 +5,7 @@ import models.Player;
 
 import java.util.List;
 import java.util.Set;
+import models.Score;
 
 /**
  * @author <a href="mailto:tommy@diabol.se">Tommy Tynj&auml;</a>
@@ -23,11 +24,13 @@ public interface GameSession {
     
     public void start();
 
-    public void handleAnswer(final Integer questionId, final Integer answerId);
+    public void handleAnswer(String playerId, Question question, boolean correct);
     
     public Question nextQuestion(String playerId);
     
-    public Scoreboard getScore();
+    public List<Score> getScores();
+
+    public void stop();
     
 
 }

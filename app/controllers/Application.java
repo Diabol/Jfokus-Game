@@ -37,6 +37,7 @@ public class Application extends Controller {
         }
         String gameSessionId = gameEngine.registerPlayer(player);
         session.put("gameSessionId", gameSessionId);
+        session.put("playerId", player.id);
         redirect("/Game/waitForStart");
     }
 
@@ -67,6 +68,7 @@ public class Application extends Controller {
         }
         String gameSessionId = gameEngine.registerPlayer(player);
         session.put("gameSessionId", gameSessionId);
+        session.put("playerId", player.id);
         redirect("/Game/waitForStart");
     }
 

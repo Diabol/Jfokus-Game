@@ -8,24 +8,22 @@ import models.Player;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Random;
 import java.util.Set;
-import java.util.logging.Logger;
 import models.GameRound;
+import models.Score;
 
 /**
  * @author <a href="mailto:tommy@diabol.se">Tommy Tynj&auml;</a>
  */
 public class BasicGameSession implements GameSession {
 
-    private static final Logger LOG = Logger.getLogger("GameSession");
     private final Set<PlayerSession> playerSessions = new LinkedHashSet<PlayerSession>();
     private GameRound gameRound;
 
     public BasicGameSession(List<Question> questions) {
         gameRound = new GameRound(new HashSet<Question>(questions), null, 180);
         GameRound.em().persist(gameRound);
-        LOG.info("Started BasicGameSession with " + questions.size()+" number of questions");
+        play.Logger.info("Started BasicGameSession with " + questions.size()+" number of questions");
     }
 
     @Override
@@ -37,10 +35,22 @@ public class BasicGameSession implements GameSession {
 
     @Override
     public void addPlayer(final Player player) {
-        PlayerSession newPlayerSession = new BasicPlayerSession(player);
+        Score score = createNewScore(player);
+        PlayerSession newPlayerSession = new BasicPlayerSession(player, score);
         newPlayerSession.setQuestions(gameRound.questions.iterator());
         playerSessions.add(newPlayerSession);
-        LOG.info("Successfully add player: " + player.id + " with session: " + newPlayerSession);
+        play.Logger.info("Successfully add player: " + player.id + " with session: " + newPlayerSession);
+    }
+
+    private Score createNewScore(final Player player) {
+        Score score = new Score();
+        score.player = player;
+        score.gameRound = gameRound;
+        if (gameRound.scores==null) {
+            gameRound.scores = new HashSet<Score>();
+        }
+        gameRound.scores.add(score);
+        return score;
     }
 
     public List<Player> getPlayers() {
@@ -56,22 +66,28 @@ public class BasicGameSession implements GameSession {
     }
 
     @Override
-    public void handleAnswer(final Integer questionId, final Integer answerId) {
+    public void handleAnswer(String playerId, Question question, boolean correct) {
+        PlayerSession playerSession = getPlayerSession(playerId);
+        if (correct) {
+            playerSession.addCorrectAnswer();
+        } else {
+            playerSession.addErroneousAnswer();
+        }
     }
 
     @Override
-    public Scoreboard getScore() {
-        return null;
+    public List<Score> getScores() {
+        return new ArrayList(gameRound.scores);
     }
 
     public Question nextQuestion(String playerId) {
-        LOG.info("Getting next question for player: "+playerId);
+        play.Logger.info("Getting next question for player: "+playerId);
         PlayerSession session = getPlayerSession(playerId);
         Question question = null;
         if (session!=null) {
             question = session.getNextQuestion();
         }
-        LOG.info("Next question is: "+(question==null?"null":question.text));
+        play.Logger.info("Next question is: "+(question==null?"null":question.text));
         return question;
     }
     
@@ -82,6 +98,11 @@ public class BasicGameSession implements GameSession {
             }
         }
         return null;
+    }
+
+    public void stop() {
+        // TODO this fails because GameRound is not attached to the hibernate session anymore...
+        //gameRound.save();
     }
 
 }

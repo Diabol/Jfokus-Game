@@ -3,6 +3,7 @@ package engine;
 import java.util.Iterator;
 import models.Question;
 import models.Player;
+import models.Score;
 
 /**
  * @author <a href="mailto:tommy@diabol.se">Tommy Tynj&auml;</a>
@@ -22,5 +23,7 @@ public interface PlayerSession {
     public void setQuestions(Iterator<Question> questionIterator);
     
     public Player getPlayer();
+    
+    public Score getScore();
 
 }
