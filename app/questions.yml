@@ -23,3 +23,75 @@ Answer(1D):
   text: "The canadian guy"
   correct: true
   question: 1
+  
+Question(2):
+  text: "Who didn't like cooked cheese?"
+  answers: [2A, 2B, 2C, 2D]
+  
+Answer(2A):
+  text: "Daniel"
+  correct: false
+  question: 1
+
+Answer(2B):
+  text: "Peter"
+  correct: false
+  question: 1
+  
+Answer(2C):
+  text: "Andreas"
+  correct: false
+  question: 1
+  
+Answer(2D):
+  text: "The tall guy"
+  correct: true
+  question: 1
+  
+Question(3):
+  text: "What is the meaning of life?"
+  answers: [3A, 3B, 3C, 3D]
+  
+Answer(3A):
+  text: "Beer"
+  correct: false
+  question: 1
+
+Answer(3B):
+  text: "Sun"
+  correct: false
+  question: 1
+  
+Answer(3C):
+  text: "Girls"
+  correct: false
+  question: 1
+  
+Answer(3D):
+  text: "47"
+  correct: true
+  question: 1
+Question(4):
+  text: "What is the capital of belarus?"
+  answers: [4A, 4B, 4C, 4D]
+  
+Answer(4A):
+  text: "Moscow"
+  correct: false
+  question: 1
+
+Answer(4B):
+  text: "Minsk"
+  correct: true
+  question: 1
+  
+Answer(4C):
+  text: "Vladivostok"
+  correct: false
+  question: 1
+  
+Answer(4D):
+  text: "St Petersburg"
+  correct: false
+  question: 1
+  
