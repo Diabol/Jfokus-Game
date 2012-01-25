@@ -23,6 +23,8 @@ public interface GameSession {
     public List<Player> getPlayers();
     
     public void start();
+    
+    public boolean waitingForMorePlayers();
 
     public void handleAnswer(String playerId, Question question, boolean correct);
     

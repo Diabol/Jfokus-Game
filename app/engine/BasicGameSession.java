@@ -19,6 +19,7 @@ public class BasicGameSession implements GameSession {
 
     private final Set<PlayerSession> playerSessions = new LinkedHashSet<PlayerSession>();
     private GameRound gameRound;
+    private int numberOfPlayersPerRound = 2;
 
     public BasicGameSession(List<Question> questions) {
         gameRound = new GameRound(new HashSet<Question>(questions), null, 180);
@@ -103,6 +104,10 @@ public class BasicGameSession implements GameSession {
     public void stop() {
         // TODO this fails because GameRound is not attached to the hibernate session anymore...
         //gameRound.save();
+    }
+
+    public boolean waitingForMorePlayers() {
+        return playerSessions.size() < numberOfPlayersPerRound;
     }
 
 }
