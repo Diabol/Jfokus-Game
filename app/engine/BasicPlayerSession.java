@@ -4,6 +4,7 @@ import java.util.Iterator;
 import models.Question;
 import models.Player;
 import models.Score;
+import play.db.jpa.JPA;
 
 /**
  * @author <a href="mailto:tommy@diabol.se">Tommy Tynj&auml;</a>
@@ -27,15 +28,20 @@ public class BasicPlayerSession implements PlayerSession {
 
     @Override
     public void addCorrectAnswer() {
-        this.score.numberOfAnswers++;
         this.score.numberOfCorrectAnswers++;
         this.score.numberOfPoints++;
+        update();
     }
 
     @Override
     public void addErroneousAnswer() {
-        this.score.numberOfAnswers++;
         this.score.numberOfIncorrectAnswers++;
+        update();
+    }
+
+    private void update() {
+        this.score.numberOfAnswers++;
+        JPA.em().persist(this.score);
     }
 
     @Override

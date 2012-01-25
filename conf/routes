@@ -6,6 +6,7 @@
 GET     /                                       Application.index
 GET     /question                               Question.question
 GET     /score                                  Scoreboard.index
+GET     /scoreboard                             Scoreboard.all
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
