@@ -28,20 +28,23 @@ public class BasicPlayerSession implements PlayerSession {
 
     @Override
     public void addCorrectAnswer() {
-        this.score.numberOfCorrectAnswers++;
-        this.score.numberOfPoints++;
-        update();
+        Score s = Score.findById(score.getId());
+        s.numberOfCorrectAnswers++;
+        s.numberOfPoints++;
+        update(s);
     }
 
     @Override
     public void addErroneousAnswer() {
-        this.score.numberOfIncorrectAnswers++;
-        update();
+        Score s = Score.findById(score.getId());
+        s.numberOfIncorrectAnswers++;
+        update(s);
     }
 
-    private void update() {
-        this.score.numberOfAnswers++;
-        JPA.em().persist(this.score);
+    private void update(final Score score) {
+        score.numberOfAnswers++;
+        score.save();
+        this.score = score;
     }
 
     @Override

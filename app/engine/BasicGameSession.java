@@ -4,6 +4,7 @@ import models.GameRound;
 import models.Player;
 import models.Question;
 import models.Score;
+import play.db.jpa.JPA;
 
 import java.util.*;
 
@@ -44,6 +45,7 @@ public class BasicGameSession implements GameSession {
             gameRound.scores = new HashSet<Score>();
         }
         gameRound.scores.add(score);
+        JPA.em().persist(score);
         return score;
     }
 
@@ -71,6 +73,7 @@ public class BasicGameSession implements GameSession {
 
     @Override
     public List<Score> getScores() {
+        gameRound = GameRound.findById(gameRound.getId());
         return new ArrayList<Score>(gameRound.scores);
     }
 
@@ -95,8 +98,8 @@ public class BasicGameSession implements GameSession {
     }
 
     public void stop() {
-        // TODO this fails because GameRound is not attached to the hibernate session anymore...
-        //gameRound.save();
+        gameRound = GameRound.findById(gameRound.getId());
+        gameRound.save();
     }
 
     public boolean waitingForMorePlayers() {

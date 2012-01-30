@@ -34,7 +34,7 @@ public class Question extends Controller {
         String gameSessionId = session.get("gameSessionId");
         String playerId = session.get("playerId");
         boolean correct = gameEngine.answerQuestion(gameSessionId, playerId, Long.parseLong(question), Long.parseLong(answer));
-        play.Logger.info("Answer was: ", correct? "Correct":"Incorrect");
+        play.Logger.info("Answer was: " + (correct ? "Correct" : "Incorrect"));
         next();
     }
     
