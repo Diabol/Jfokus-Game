@@ -16,6 +16,7 @@ import models.Score;
  */
 public class SimpleGameEngine implements GameEngine {
 
+    public static final int NUMBER_OF_QUESTIONS = 10;
     private Map<String, GameSession> gameSessions = new HashMap<String, GameSession>();
 
     public String registerPlayer(Player player) {
@@ -25,7 +26,7 @@ public class SimpleGameEngine implements GameEngine {
             }
         }
         play.Logger.info("Creating new GameSession");
-        GameSession session = new BasicGameSession(loadQuestions(10));
+        GameSession session = new BasicGameSession(loadQuestions(NUMBER_OF_QUESTIONS));
         gameSessions.put(session.getId().toString(), session);
         return addPlayerToSession(session, player);
     }
@@ -60,6 +61,9 @@ public class SimpleGameEngine implements GameEngine {
     }
 
     public List<Score> getScores(String gameSessionId) {
+        if (gameSessionId == null || gameSessions.get(gameSessionId) == null) {
+            return Collections.emptyList();
+        }
         return gameSessions.get(gameSessionId).getScores();
     }
 

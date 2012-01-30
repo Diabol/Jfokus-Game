@@ -18,7 +18,7 @@ public class BasicGameSession implements GameSession {
     private int numberOfPlayersPerRound = 2;
 
     public BasicGameSession(List<Question> questions) {
-        gameRound = new GameRound(new HashSet<Question>(questions), null, 180);
+        gameRound = new GameRound(new LinkedHashSet<Question>(questions), null, 180);
         GameRound.em().persist(gameRound);
         play.Logger.info("Started BasicGameSession with " + questions.size() + " number of questions");
     }
