@@ -1,98 +1,241 @@
 # you describe your data using the YAML notation here
 # and then load them using Fixtures.load("data.yml")
 Question(1):
-  text: "Who doesn't like sauce?"
+  text: "What specification does Apache Jackrabbit implement?"
   answers: [1A, 1B, 1C, 1D]
   
 Answer(1A):
-  text: "Daniel"
-  correct: false
+  text: "Content repository API for Java"
+  correct: true
   question: 1
 
 Answer(1B):
-  text: "Peter"
+  text: "JavaServer Faces 1.2"
   correct: false
   question: 1
   
 Answer(1C):
-  text: "Andreas"
+  text: "Java Rules Engine API"
   correct: false
   question: 1
   
 Answer(1D):
-  text: "The canadian guy"
-  correct: true
+  text: "XQuery API for Java"
+  correct: false
   question: 1
   
 Question(2):
-  text: "Who didn't like cooked cheese?"
+  text: "What is the Java Specification Request (JSR) 299?"
   answers: [2A, 2B, 2C, 2D]
   
 Answer(2A):
-  text: "Daniel"
+  text: "Java API for RESTful Web Services 1.0 and 1.1"
   correct: false
   question: 2
 
 Answer(2B):
-  text: "Peter"
+  text: "JavaServer Faces 2.0"
   correct: false
   question: 2
   
 Answer(2C):
-  text: "Andreas"
+  text: "Java Persistence API 2.0"
   correct: false
   question: 2
   
 Answer(2D):
-  text: "The tall guy"
+  text: "Java Contexts and Dependency Injection"
   correct: true
   question: 2
   
 Question(3):
-  text: "What is the meaning of life?"
+  text: "In which Java version was the Java collections framework introduced?"
   answers: [3A, 3B, 3C, 3D]
   
 Answer(3A):
-  text: "Beer"
+  text: "JDK 1.1"
   correct: false
   question: 3
 
 Answer(3B):
-  text: "Sun"
-  correct: false
+  text: "JDK 1.2"
+  correct: true
   question: 3
   
 Answer(3C):
-  text: "Girls"
+  text: "JDK 1.3"
   correct: false
   question: 3
   
 Answer(3D):
-  text: "47"
-  correct: true
+  text: "JDK 1.4"
+  correct: false
   question: 3
   
 Question(4):
-  text: "What is the capital of belarus?"
+  text: "Which company originally developed the Apache Cassandra distributed database management system?"
   answers: [4A, 4B, 4C, 4D]
   
 Answer(4A):
-  text: "Moscow"
+  text: "Novell"
   correct: false
   question: 4
 
 Answer(4B):
-  text: "Minsk"
-  correct: true
+  text: "Twitter"
+  correct: false
   question: 4
   
 Answer(4C):
-  text: "Vladivostok"
-  correct: false
+  text: "Facebook"
+  correct: true
   question: 4
   
 Answer(4D):
-  text: "St Petersburg"
+  text: "Google"
   correct: false
   question: 4
-  
+
+Question(5):
+  text: "A wildcard in Java is a special actual parameter for the instantiation of parameterized types. How is it declared?"
+  answers: [5A, 5B, 5C, 5D]
+
+Answer(5A):
+  text: "?"
+  correct: true
+  question: 5
+
+Answer(5B):
+  text: "extends"
+  correct: false
+  question: 5
+
+Answer(5C):
+  text: "*"
+  correct: false
+  question: 5
+
+Answer(5D):
+  text: "<>"
+  correct: false
+  question: 5
+
+Question(6):
+  text: "Who created the Clojure programming language?"
+  answers: [6A, 6B, 6C, 6D]
+
+Answer(6A):
+  text: "Jevgeni Kabanov"
+  correct: false
+  question: 6
+
+Answer(6B):
+  text: "Simon Peyton Jones"
+  correct: false
+  question: 6
+
+Answer(6C):
+  text: "Rick Hickey"
+  correct: true
+  question: 6
+
+Answer(6D):
+  text: "Alan Kay"
+  correct: false
+  question: 6
+
+Question(7):
+  text: "What programming language is Clojure a dialect of?"
+  answers: [7A, 7B, 7C, 7D]
+
+Answer(7A):
+  text: "Fortran"
+  correct: false
+  question: 7
+
+Answer(7B):
+  text: "Smalltalk"
+  correct: false
+  question: 7
+
+Answer(7C):
+  text: "Pascal"
+  correct: false
+  question: 7
+
+Answer(7D):
+  text: "Lisp"
+  correct: true
+  question: 7
+
+Question(8):
+  text: "What does IBM stand for?"
+  answers: [8A, 8B, 8C, 8D]
+
+Answer(8A):
+  text: "Intelligent Business Machines"
+  correct: false
+  question: 8
+
+Answer(8B):
+  text: "International Business Machines"
+  correct: true
+  question: 8
+
+Answer(8C):
+  text: "Inventive Business Machines"
+  correct: false
+  question: 8
+
+Answer(8D):
+  text: "Innovative Business Machines"
+  correct: false
+  question: 8
+
+Question(9):
+  text: "What is Arquillian?"
+  answers: [9A, 9B, 9C, 9D]
+
+Answer(9A):
+  text: "An application server"
+  correct: false
+  question: 9
+
+Answer(9B):
+  text: "A framework for integration tests"
+  correct: true
+  question: 9
+
+Answer(9C):
+  text: "A Java code coverage analysis tool"
+  correct: false
+  question: 9
+
+Answer(9D):
+  text: "An IDE for Android development"
+  correct: false
+  question: 9
+
+Question(10):
+  text: "Where is the Eclipse Foundation headquarters situated?"
+  answers: [10A, 10B, 10C, 10D]
+
+Answer(10A):
+  text: "Toronto, Canada"
+  correct: false
+  question: 10
+
+Answer(10B):
+  text: "Mississauga, Canada"
+  correct: false
+  question: 10
+
+Answer(10C):
+  text: "Ottawa, Canada"
+  correct: true
+  question: 10
+
+Answer(10D):
+  text: "Vancouver, Canada"
+  correct: false
+  question: 10
