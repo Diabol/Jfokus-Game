@@ -20,7 +20,7 @@ public class Question extends Controller {
         String gameSessionId = session.get("gameSessionId");
         String playerId = session.get("playerId");
         models.Question question = gameEngine.getNextQuestion(gameSessionId, playerId);
-        if (question==null) {
+        if (question == null) {
             redirect("/game/stop");
         } else {
             render("@question",question);

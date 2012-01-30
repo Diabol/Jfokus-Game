@@ -34,7 +34,7 @@ public class BasicGameSession implements GameSession {
         PlayerSession newPlayerSession = new BasicPlayerSession(player, score);
         newPlayerSession.setQuestions(gameRound.questions.iterator());
         playerSessions.add(newPlayerSession);
-        play.Logger.info("Successfully add player: " + player.id + " with session: " + newPlayerSession);
+        play.Logger.info("Added player " + player.id + " to game session: " + newPlayerSession.getId());
     }
 
     private Score createNewScore(final Player player) {
@@ -84,7 +84,7 @@ public class BasicGameSession implements GameSession {
         if (session != null) {
             question = session.getNextQuestion();
         }
-        play.Logger.info("Next question is: " + (question == null ? "null" : question.text));
+        play.Logger.info("Next question is: " + (question == null ? "null" : question.getId() + " = " + question.text));
         return question;
     }
 

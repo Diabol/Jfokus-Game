@@ -4,12 +4,9 @@
  */
 package engine;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.*;
+
 import models.Question;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
 import models.Player;
 import models.Score;
 
@@ -22,7 +19,6 @@ public class SimpleGameEngine implements GameEngine {
     private Map<String, GameSession> gameSessions = new HashMap<String, GameSession>();
 
     public String registerPlayer(Player player) {
-        play.Logger.info("SimpleGameEnging: " + this.hashCode());
         for (GameSession session : gameSessions.values()) {
             if (session.waitingForMorePlayers()) {
                 return addPlayerToSession(session, player);
@@ -41,7 +37,6 @@ public class SimpleGameEngine implements GameEngine {
     }
 
     public boolean hasSessionStarted(String gameSessionId) {
-        play.Logger.info("SimpleGameEnging: " + this.hashCode());
         GameSession session = gameSessions.get(gameSessionId);
         return !session.waitingForMorePlayers();
     }
@@ -51,12 +46,12 @@ public class SimpleGameEngine implements GameEngine {
     }
 
     public Question getNextQuestion(String gameSessionId, String playerId) {
-        play.Logger.info("SimpleGameEnging: " + this.hashCode());
+        play.Logger.info("Getting next question for player: " + playerId + ", game session: " + gameSessionId);
         return gameSessions.get(gameSessionId).nextQuestion(playerId);
     }
 
     public boolean answerQuestion(String gameSessionId, String playerId, Long questionId, Long answerId) {
-        play.Logger.info("SimpleGameEnging: " + this.hashCode());
+        play.Logger.info("Player " + playerId + " answered question " + questionId + " with " + answerId + ", game session: ", gameSessionId);
         models.Question question = models.Question.findById(questionId);
         models.Answer answer = models.Answer.findById(answerId);
         boolean correct = answer.equals(question.getCorrectAnswer());
@@ -73,15 +68,15 @@ public class SimpleGameEngine implements GameEngine {
         List<Question> allQuestions = Question.findAll();
         play.Logger.info("Total number of quetions in DB: " + allQuestions.size());
         List<Question> questions = null;
-        if (allQuestions.size() <= numberOfQuestions) {
-            questions = allQuestions;
-        } else {
-            Random rnd = new Random(System.currentTimeMillis());
-            List<Question> randomList = new ArrayList<Question>(Math.min(numberOfQuestions, allQuestions.size()));
-            for (int i = 0; i < randomList.size(); i++) {
-                randomList.add(allQuestions.get(rnd.nextInt(randomList.size())));
+        if (allQuestions.size() > numberOfQuestions) {
+            int amount = Math.min(numberOfQuestions, allQuestions.size());
+            questions = new ArrayList<Question>();
+            Collections.shuffle(allQuestions);
+            for (int i = 0; i < amount; i++) {
+                questions.add(allQuestions.get(i));
             }
-            questions = randomList;
+        } else {
+            questions = allQuestions;
         }
         return questions;
     }
