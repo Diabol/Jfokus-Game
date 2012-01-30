@@ -28,8 +28,10 @@ public class QuestionJpaTest extends UnitTest {
         assertNotNull(questions);
         assertEquals(1, questions.size());
         Question q = questions.get(0);
-        assertEquals("Who is the father of Java?", q.text);
+        assertEquals("Who is considered the father of Java?", q.text);
         assertNotNull(q.answers);
         assertEquals(4, q.answers.size());
+        assertNotNull(q.getCorrectAnswer());
+        assertEquals("James Gosling", q.getCorrectAnswer().text);
     }
 }
