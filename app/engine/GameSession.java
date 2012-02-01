@@ -32,7 +32,8 @@ public interface GameSession {
     
     public List<Score> getScores();
 
-    public void stop();
+    public void stop(String playerId);
     
+    public boolean isDone();
 
 }

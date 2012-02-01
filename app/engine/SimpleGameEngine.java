@@ -5,6 +5,7 @@
 package engine;
 
 import java.util.*;
+import javax.mail.Session;
 
 import models.Question;
 import models.Player;
@@ -40,10 +41,6 @@ public class SimpleGameEngine implements GameEngine {
     public boolean hasSessionStarted(String gameSessionId) {
         GameSession session = gameSessions.get(gameSessionId);
         return !session.waitingForMorePlayers();
-    }
-
-    public List<Player> getPlayers(String gameSessionId) {
-        return gameSessions.get(gameSessionId).getPlayers();
     }
 
     public Question getNextQuestion(String gameSessionId, String playerId) {
@@ -85,7 +82,7 @@ public class SimpleGameEngine implements GameEngine {
         return questions;
     }
 
-    public void stopGameSession(String gameSessionId) {
-        gameSessions.get(gameSessionId).stop();
+    public GameSession getGameSession(String gameSessionId){
+        return gameSessions.get(gameSessionId);
     }
 }

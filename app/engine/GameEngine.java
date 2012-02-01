@@ -14,9 +14,8 @@ public interface GameEngine {
 
     public String registerPlayer(final Player player);
     public boolean hasSessionStarted(String gameSessionId);
-    public List<Player> getPlayers(String gameSessionId);
     public Question getNextQuestion(String gameSessionId, String playerId);
     public boolean answerQuestion(String gameSessionId, String playerId, Long questionId, Long answerId);
     public List<Score> getScores(String gameSessionId);
-    public void stopGameSession(String gameSessionId);
+    public GameSession getGameSession(String gameSessionId);
 }

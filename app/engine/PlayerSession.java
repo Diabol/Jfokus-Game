@@ -26,4 +26,10 @@ public interface PlayerSession {
     
     public Score getScore();
 
+    public void start();
+
+    public void stop();
+    
+    public boolean isDone();
+
 }

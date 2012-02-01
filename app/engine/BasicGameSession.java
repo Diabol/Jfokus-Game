@@ -59,6 +59,10 @@ public class BasicGameSession implements GameSession {
 
     @Override
     public void start() {
+        gameRound.start();
+        for(PlayerSession ps : playerSessions){
+            ps.start();
+        }
     }
 
     @Override
@@ -97,8 +101,10 @@ public class BasicGameSession implements GameSession {
         return null;
     }
 
-    public void stop() {
+    public void stop(String playerId) {
         gameRound = GameRound.findById(gameRound.getId());
+        PlayerSession playerSession = getPlayerSession(playerId);
+        playerSession.stop();
         gameRound.save();
     }
 
@@ -106,4 +112,10 @@ public class BasicGameSession implements GameSession {
         return playerSessions.size() < numberOfPlayersPerRound;
     }
 
+    public boolean isDone(){
+        for(PlayerSession playerSession : playerSessions){
+            if(!playerSession.isDone()) return false;
+        }
+        return true;
+    }
 }

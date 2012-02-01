@@ -1,10 +1,10 @@
 package engine;
 
+import java.util.Date;
 import java.util.Iterator;
 import models.Question;
 import models.Player;
 import models.Score;
-import play.db.jpa.JPA;
 
 /**
  * @author <a href="mailto:tommy@diabol.se">Tommy Tynj&auml;</a>
@@ -13,6 +13,8 @@ public class BasicPlayerSession implements PlayerSession {
     
     private Player player;
     private Score score;
+    private Date start;
+    private Date stop;
     private Iterator<Question> questionsIterator;
     private Question currentQuestion;
 
@@ -73,5 +75,16 @@ public class BasicPlayerSession implements PlayerSession {
     public void setQuestions(Iterator<Question> questionIterator) {
         this.questionsIterator = questionIterator;
     }
+
+    public void start() {
+        start = new Date();
+    }
+
+    public void stop() {
+        stop = new Date();
+    }
     
+    public boolean isDone(){
+        return (stop != null) ? true : false;
+    }
 }
