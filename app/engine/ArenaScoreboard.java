@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class ArenaScoreboard implements Scoreboard {
 
-    public static final Integer MAX_RESULTS = 100;
+    public static final Integer MAX_RESULTS = 14;
 
     @Override
     @SuppressWarnings("unchecked")

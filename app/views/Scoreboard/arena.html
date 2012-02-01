@@ -1,4 +1,10 @@
 #{extends 'main.html' /}
+<script type="text/javascript">
+    setTimeout(function(){
+        window.location.reload(1);
+    }, 5000);
+</script>
+
 <h2>Standings</h2>
 <br/>
 #{if scores.size() > 0}
@@ -6,15 +12,15 @@
     #{list items:scores, as:'score'}
         <div class="score">
             <p class="name">
-        #{if score.player.twitter != null}
-            ${score.player.twitter}
-        #{/if}
-        #{else}
-            ${score.player.name}
-        #{/else}
+                #{if score.player.twitter != null}
+                    ${score.player.twitter}
+                #{/if}
+                #{else}
+                    ${score.player.name}
+                #{/else}
             </p>
             <p class="points">
-        ${score.numberOfPoints}
+                ${score.numberOfPoints}
             </p>
         </div>
         <br />
@@ -22,3 +28,5 @@
 </div>
 <br/>
 #{/if}
+
+</body>
