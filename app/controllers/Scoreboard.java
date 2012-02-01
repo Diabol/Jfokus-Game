@@ -22,6 +22,6 @@ public class Scoreboard extends Controller {
     public static void all() {
         Query query = JPA.em().createQuery("select s from Score s order by s.numberOfPoints desc");
         List<Score> scores = query.setMaxResults(100).getResultList();
-        render("@index",scores);
+        render("@arena", scores);
     }
 }
