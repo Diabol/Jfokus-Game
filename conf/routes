@@ -4,7 +4,8 @@
 
 # Home page
 GET     /                                       Application.index
-GET     /question                               Question.question
+POST    /question                               Question.question
+GET     /question                               Application.index
 GET     /score                                  Scoreboard.index
 GET     /scoreboard                             Scoreboard.all
 
@@ -16,5 +17,3 @@ GET     /public/                                staticDir:public
 
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}
-
-

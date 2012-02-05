@@ -1,7 +1,7 @@
 # You can specialize this file for each language.
 # For example, for French create a messages.fr file
 #
-application.name=Jfokus 2012 Quiz
+application.name=Jfokus Quiz 2012
 application.copyright=Copyright &copy; 2012 Diabol AB
 register.name=Name
 register.email=Email

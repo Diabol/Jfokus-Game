@@ -85,6 +85,6 @@ public class BasicPlayerSession implements PlayerSession {
     }
     
     public boolean isDone(){
-        return (stop != null) ? true : false;
+        return (stop != null);
     }
 }

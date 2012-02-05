@@ -4,7 +4,7 @@
 <br/>
 #{list items:question.answers, as:'answer'}
     <div class="answer">
-        <form action="@{Question.answer()}" method="GET">
+        <form action="@{Question.answer()}" method="POST">
             <input type="hidden" name="question" value="${question.id}"/>
             <input type="hidden" name="answer" value="${answer.id}"/>
             <input type="submit" class="submit" value="${answer.text}" />

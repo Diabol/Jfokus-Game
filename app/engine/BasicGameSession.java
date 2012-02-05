@@ -68,10 +68,12 @@ public class BasicGameSession implements GameSession {
     @Override
     public void handleAnswer(String playerId, Question question, boolean correct) {
         PlayerSession playerSession = getPlayerSession(playerId);
-        if (correct) {
-            playerSession.addCorrectAnswer();
-        } else {
-            playerSession.addErroneousAnswer();
+        if (!playerSession.isDone()) {
+            if (correct) {
+                playerSession.addCorrectAnswer();
+            } else {
+                playerSession.addErroneousAnswer();
+            }
         }
     }
 
@@ -85,7 +87,7 @@ public class BasicGameSession implements GameSession {
         play.Logger.info("Getting next question for player: " + playerId);
         PlayerSession session = getPlayerSession(playerId);
         Question question = null;
-        if (session != null) {
+        if (session != null && !session.isDone()) {
             question = session.getNextQuestion();
         }
         play.Logger.info("Next question is: " + (question == null ? "null" : question.getId() + " = " + question.text));

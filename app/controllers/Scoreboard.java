@@ -5,6 +5,8 @@ import engine.GameEngine;
 import java.util.List;
 import javax.inject.Inject;
 import javax.persistence.Query;
+
+import engine.GameSession;
 import models.Score;
 import play.db.jpa.JPA;
 import play.mvc.Controller;
@@ -16,6 +18,10 @@ public class Scoreboard extends Controller {
     
     public static void index() {
         String gameSessionId = session.get("gameSessionId");
+        GameSession gameSession = gameEngine.getGameSession(gameSessionId);
+        if (gameSession == null || !gameSession.isDone()) {
+            render("@Application.index");
+        }
         List<Score> scores = gameEngine.getScores(gameSessionId);
         render(scores);
     }
