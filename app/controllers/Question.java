@@ -16,14 +16,14 @@ public class Question extends Controller {
     @Inject
     static GameEngine gameEngine;
 
-    public static void next() {
+    public static void next(Boolean lastAnswerWasCorrect) {
         String gameSessionId = session.get("gameSessionId");
         String playerId = session.get("playerId");
         models.Question question = gameEngine.getNextQuestion(gameSessionId, playerId);
         if (question == null) {
             redirect("/game/stop");
         } else {
-            render("@question",question);
+            render("@question",question,"@lastAnswerWasCorrect",lastAnswerWasCorrect);
         }
     }
     
@@ -35,7 +35,7 @@ public class Question extends Controller {
         String playerId = session.get("playerId");
         boolean correct = gameEngine.answerQuestion(gameSessionId, playerId, Long.parseLong(question), Long.parseLong(answer));
         play.Logger.info("Answer was: " + (correct ? "Correct" : "Incorrect"));
-        next();
+        next(correct);
     }
     
     public static void list() {

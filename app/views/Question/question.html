@@ -11,6 +11,22 @@
         </form>
     </div>
 #{/list}
+<div id="lastAnswerWasCorrect" style="display: none">${lastAnswerWasCorrect}</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var lastAnswer = $("#lastAnswerWasCorrect").text();
+        if(lastAnswer === "true"){
+            $("#mainBody").animate({ backgroundColor: "green" }, "fast", function(){
+                $("#mainBody").animate({ backgroundColor: "black" }, "fast");
+            });
+        }
+        else if(lastAnswer === "false") {
+            $("#mainBody").animate({ backgroundColor: "red" }, "fast", function(){
+                $("#mainBody").animate({ backgroundColor: "black" }, "fast");
+            });
+        }
+        });
+</script>
 <br/>
 <div class="status">
     <div class="correct">${correct}</div>

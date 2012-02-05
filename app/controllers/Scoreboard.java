@@ -1,5 +1,6 @@
 package controllers;
 
+import engine.ArenaScoreboard;
 import engine.GameEngine;
 import java.util.List;
 import javax.inject.Inject;
@@ -9,7 +10,7 @@ import play.db.jpa.JPA;
 import play.mvc.Controller;
 
 public class Scoreboard extends Controller {
-
+    
     @Inject
     static GameEngine gameEngine;
     
@@ -21,7 +22,7 @@ public class Scoreboard extends Controller {
     
     public static void all() {
         Query query = JPA.em().createQuery("select s from Score s order by s.numberOfPoints desc");
-        List<Score> scores = query.setMaxResults(100).getResultList();
-        render("@index",scores);
+        List<Score> scores = query.setMaxResults(ArenaScoreboard.MAX_RESULTS).getResultList();
+        render("@arena", scores);
     }
 }

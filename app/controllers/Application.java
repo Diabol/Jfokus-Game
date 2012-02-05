@@ -36,6 +36,7 @@ public class Application extends Controller {
             }
         }
         String gameSessionId = gameEngine.registerPlayer(player);
+        gameEngine.registerPlayer(player);
         session.put("gameSessionId", gameSessionId);
         session.put("playerId", player.id);
         redirect("/Game/waitForStart");
@@ -56,7 +57,7 @@ public class Application extends Controller {
         Player player = null;
         List<Player> players = Player.find("byEmail", email.toLowerCase()).fetch();
         if (players.isEmpty()) {
-            player = new Player(name, email.toLowerCase(), twitter);
+            player = new Player(name, email.toLowerCase(), formatTwitterHandle(twitter));
             Player.em().persist(player);
         } else {
             if (players.size() == 1 && isSamePlayer(name, email, twitter, players.get(0))) {
@@ -71,6 +72,12 @@ public class Application extends Controller {
         session.put("gameSessionId", gameSessionId);
         session.put("playerId", player.id);
         redirect("/Game/waitForStart");
+    }
+
+    public static String formatTwitterHandle(String handle) {
+        if (handle == null || handle.trim().equals("")) return null;
+        handle = handle.replace("@", "");
+        return "@" + handle;
     }
 
     private static boolean isSamePlayer(String name, String email, String twitter, Player player) {

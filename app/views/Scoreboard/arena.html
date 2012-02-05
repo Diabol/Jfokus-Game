@@ -1,0 +1,32 @@
+#{extends 'main.html' /}
+<script type="text/javascript">
+    setTimeout(function(){
+        window.location.reload(1);
+    }, 5000);
+</script>
+
+<h2>Standings</h2>
+<br/>
+#{if scores.size() > 0}
+<div class="scoreboard">
+    #{list items:scores, as:'score'}
+        <div class="score">
+            <p class="name">
+                #{if score.player.twitter != null}
+                    ${score.player.twitter}
+                #{/if}
+                #{else}
+                    ${score.player.name}
+                #{/else}
+            </p>
+            <p class="points">
+                ${score.numberOfPoints}
+            </p>
+        </div>
+        <br />
+    #{/list}
+</div>
+<br/>
+#{/if}
+
+</body>

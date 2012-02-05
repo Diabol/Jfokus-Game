@@ -19,37 +19,36 @@ a.nostyle {
 }
 
 #header {
-	margin-top: 50px;
-        width: 800px;
-	margin-left: auto ;
-	margin-right: auto ;
+    margin-top: 50px;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #footer {
-	font-size: 0.7em;
-        width: 800px;
-	margin-left: auto ;
-	margin-right: auto ;
-        color: #cccccc;
+    font-size: 0.7em;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #cccccc;
 }
-
 
 #mainBody {
-        min-height:400px;
-        height:auto !important;
-        height:400px;
-        width: 800px;
-	margin-left: auto ;
-	margin-right: auto ;
-        padding: 10px;
-        background-color: #000000;
-        border: 2px solid #999999;
-	-webkit-border-radius: 5px 5px 5px 5px;
-	-moz-border-radius: 5px 5px 5px 5px;
-	border-radius: 5px 5px 5px 5px;
+    min-height: 400px;
+    height: auto !important;
+    height: 400px;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    background-color: #000000;
+    border: 2px solid #999999;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
 }
 
-#footer table,#header table {
+#footer table, #header table {
     width: 100%;
 }
 
@@ -138,3 +137,29 @@ input {
     font-size: 0.8em;
 }
 
+.scoreboard {
+    overflow: hidden;
+    float : left;
+    text-align: left;
+}
+
+.score {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.name {
+    width: 680px;
+    display: block;
+    float: left;
+    text-align: left;
+    margin-left: 50px;
+}
+
+.points {
+    width: 20px;
+    margin-right: 50px;
+    display: block;
+    float: left;
+    text-align: right;
+}
