@@ -48,6 +48,10 @@ public class Application extends Controller {
             String twitter,
             @Required @IsTrue boolean termsOfUse) {
 
+        name = name.toLowerCase();
+        email = email.toLowerCase();
+        twitter = twitter.toLowerCase();
+
         // Handle validation errors
         if (Validation.hasErrors()) {
             Validation.addError("registration", Messages.get("error.mandatoryRegistrationFields"));
@@ -79,8 +83,18 @@ public class Application extends Controller {
         handle = handle.replace("@", "");
         return "@" + handle;
     }
+    
+    public static String emptyIfNull(final String string) {
+        if (string == null) return "";
+        else return string;
+    }
 
-    private static boolean isSamePlayer(String name, String email, String twitter, Player player) {
-        return name.equals(player.name) && email.equals(player.email) && twitter.equals(player.twitter);
+    public static boolean isSamePlayer(String name, String email, String twitter, Player player) {
+        final String vname = emptyIfNull(name).toLowerCase();
+        final String vemail = emptyIfNull(email).toLowerCase();
+        final String vtwitter = emptyIfNull(formatTwitterHandle(twitter)).toLowerCase();
+        final String ptwitter = emptyIfNull(formatTwitterHandle(player.twitter)).toLowerCase();
+        
+        return vname.equals(player.name) && vemail.equals(player.email) && vtwitter.equals(ptwitter);
     }
 }
