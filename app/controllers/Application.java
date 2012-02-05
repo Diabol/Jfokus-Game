@@ -90,11 +90,11 @@ public class Application extends Controller {
     }
 
     public static boolean isSamePlayer(String name, String email, String twitter, Player player) {
-        final String vname = emptyIfNull(name).toLowerCase();
-        final String vemail = emptyIfNull(email).toLowerCase();
-        final String vtwitter = emptyIfNull(formatTwitterHandle(twitter)).toLowerCase();
-        final String ptwitter = emptyIfNull(formatTwitterHandle(player.twitter)).toLowerCase();
+        final String vname = emptyIfNull(name);
+        final String vemail = emptyIfNull(email);
+        final String vtwitter = emptyIfNull(formatTwitterHandle(twitter));
+        final String ptwitter = emptyIfNull(formatTwitterHandle(player.twitter));
         
-        return vname.equals(player.name) && vemail.equals(player.email) && vtwitter.equals(ptwitter);
+        return vname.equalsIgnoreCase(player.name) && vemail.equalsIgnoreCase(player.email) && vtwitter.equalsIgnoreCase(ptwitter);
     }
 }
