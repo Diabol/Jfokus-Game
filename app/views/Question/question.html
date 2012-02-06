@@ -27,7 +27,21 @@
         }
         });
 </script>
+<script type="text/javascript">
+    (function timeLeft() {
+        $.post('/game/timeLeft', function(data) {
+            var status = $('#time').html();
+            if (data == '-1') {
+                alert("Time is up! Need to redirect to /score");
+            } else {
+                $('#time').html(data);
+                setTimeout(timeLeft, 1000);
+            }
+        });
+    })();
+</script>
 <br/>
+<div id="time" style="font-size: 32px"></div>
 <div class="status">
     <div class="correct">${correct}</div>
     <div class="score">${score}</div>

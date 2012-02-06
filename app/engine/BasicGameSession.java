@@ -94,10 +94,12 @@ public class BasicGameSession implements GameSession {
         return question;
     }
 
-    private PlayerSession getPlayerSession(String playerId) {
-        for (PlayerSession session : playerSessions) {
-            if (session.getPlayer().id.equals(Long.parseLong(playerId))) {
-                return session;
+    public PlayerSession getPlayerSession(String playerId) {
+        if (playerSessions != null && playerId != null) {
+            for (PlayerSession session : playerSessions) {
+                if (session.getPlayer().id.equals(Long.parseLong(playerId))) {
+                    return session;
+                }
             }
         }
         return null;
@@ -106,7 +108,9 @@ public class BasicGameSession implements GameSession {
     public void stop(String playerId) {
         gameRound = GameRound.findById(gameRound.getId());
         PlayerSession playerSession = getPlayerSession(playerId);
-        playerSession.stop();
+        if (playerSession != null) {
+            playerSession.stop();
+        }
         gameRound.save();
     }
 

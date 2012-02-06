@@ -29,6 +29,8 @@ public interface GameSession {
     public void handleAnswer(String playerId, Question question, boolean correct);
     
     public Question nextQuestion(String playerId);
+
+    public PlayerSession getPlayerSession(String playerId);
     
     public List<Score> getScores();
 

@@ -1,5 +1,6 @@
 package engine;
 
+import java.util.Date;
 import java.util.Iterator;
 import models.Question;
 import models.Player;
@@ -31,5 +32,9 @@ public interface PlayerSession {
     public void stop();
     
     public boolean isDone();
+
+    public Date getStartTime();
+    
+    public Long getSecondsLeft();
 
 }
