@@ -11,7 +11,7 @@ import models.Score;
  */
 public class BasicPlayerSession implements PlayerSession {
 
-    private static long TIME_THRESHOLD_MS = 35 * 1000;
+    private static long TIME_THRESHOLD_MS = 65 * 1000;
 
     private Player player;
     private Score score;

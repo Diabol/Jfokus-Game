@@ -2,9 +2,10 @@
 <br/>
 <h1 class="question">${question.text}</h1>
 <br/>
+<form id="finish" action="@{Question.answer()}" method="POST"/>
 #{list items:question.answers, as:'answer'}
     <div class="answer">
-        <form action="@{Question.answer()}" method="POST">
+        <form id="${question.id}" action="@{Question.answer()}" method="POST">
             <input type="hidden" name="question" value="${question.id}"/>
             <input type="hidden" name="answer" value="${answer.id}"/>
             <input type="submit" class="submit" value="${answer.text}" />
@@ -32,7 +33,7 @@
         $.post('/game/timeLeft', function(data) {
             var status = $('#time').html();
             if (data == '-1') {
-                alert("Time is up! Need to redirect to /score");
+                document.forms["finish"].submit();
             } else {
                 $('#time').html(data);
                 setTimeout(timeLeft, 1000);
