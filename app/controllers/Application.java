@@ -45,7 +45,7 @@ public class Application extends Controller {
     public static void registerPlayer (
             @Required String name,
             @Required @Email String email,
-            String twitter,
+            @Required String twitter,
             @Required @IsTrue boolean termsOfUse) {
 
         name = name.toLowerCase();
