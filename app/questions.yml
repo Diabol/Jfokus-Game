@@ -263,3 +263,388 @@ Answer(11D):
   text: "Yukihiro Matsumoto"
   correct: false
   question: 11
+  
+Question(12):
+  text: "In a Java class, what happens when you try and access an object that does not exist?"
+  answers: [12A, 12B, 12C, 12D]
+
+Answer(12A):
+  text: "NoSuchObjectFound"
+  correct: false
+  question: 12
+
+Answer(12B):
+  text: "NullReferenceException"
+  correct: false
+  question: 12
+
+Answer(12C):
+  text: "NullPointerException"
+  correct: true
+  question: 12
+
+Answer(12D):
+  text: "NoSuchFieldException"
+  correct: false
+  question: 12
+  
+Question(13):
+  text: "A method in a class having the same method name with different arguments as another method is an example of what?"
+  answers: [13A, 13B, 13C, 13D]
+
+Answer(13A):
+  text: "Method Overloading"
+  correct: true
+  question: 13
+
+Answer(13B):
+  text: "Method Overriding"
+  correct: false
+  question: 13
+
+Answer(13C):
+  text: "Method Casting"
+  correct: false
+  question: 13
+
+Answer(13D):
+  text: "Method Rewriting"
+  correct: false
+  question: 13
+  
+Question(14):
+  text: "A method in a class having the same method name and the same arguments as its parent class is an example of what?"
+  answers: [14A, 14B, 14C, 14D]
+
+Answer(14A):
+  text: "Method Overloading"
+  correct: false
+  question: 14
+
+Answer(14B):
+  text: "Method Overriding"
+  correct: true
+  question: 14
+
+Answer(14C):
+  text: "Method Casting"
+  correct: false
+  question: 14
+
+Answer(14D):
+  text: "Method Rewriting"
+  correct: false
+  question: 14
+  
+Question(15):
+  text: "What is the term used to convert one Java type to another?"
+  answers: [15A, 15B, 15C, 15D]
+
+Answer(15A):
+  text: "Relegating"
+  correct: false
+  question: 15
+
+Answer(15B):
+  text: "Converting"
+  correct: false
+  question: 15
+
+Answer(15C):
+  text: "Switching"
+  correct: false
+  question: 15
+
+Answer(15D):
+  text: "Casting"
+  correct: true
+  question: 15
+  
+Question(16):
+  text: "When two threads are waiting on each other and can't proceed, the program is said to be in?"
+  answers: [16A, 16B, 16C, 16D]
+
+Answer(16A):
+  text: "Deadlock"
+  correct: true
+  question: 16
+
+Answer(16B):
+  text: "a waiting state"
+  correct: false
+  question: 16
+
+Answer(16C):
+  text: "Distress"
+  correct: false
+  question: 16
+
+Answer(16D):
+  text: "Block"
+  correct: false
+  question: 16
+  
+Question(17):
+  text: "What class is extended by all other classes?"
+  answers: [17A, 17B, 17C, 17D]
+
+Answer(17A):
+  text: "String"
+  correct: false
+  question: 17
+
+Answer(17B):
+  text: "Class	"
+  correct: false
+  question: 17
+
+Answer(17C):
+  text: "Object"
+  correct: true
+  question: 17
+
+Answer(17D):
+  text: "Main"
+  correct: false
+  question: 17
+  
+Question(18):
+  text: "What Java entity should contain only definitions but no implementation?"
+  answers: [18A, 18B, 18C, 18D]
+
+Answer(18A):
+  text: "Abstract Class"
+  correct: false
+  question: 18
+
+Answer(18B):
+  text: "Interface"
+  correct: true
+  question: 18
+
+Answer(18C):
+  text: "Enum"
+  correct: false
+  question: 18
+
+Answer(18D):
+  text: "Inner Class"
+  correct: false
+  question: 18
+  
+Question(19):
+  text: "Which classloader loads the core Java libraries?"
+  answers: [19A, 19B, 19C, 19D]
+
+Answer(19A):
+  text: "Extensions Classloader"
+  correct: false
+  question: 19
+
+Answer(19B):
+  text: "System Classloader"
+  correct: false
+  question: 19
+
+Answer(19C):
+  text: "Bootstrap Classloader"
+  correct: true
+  question: 19
+
+Answer(19D):
+  text: "Main Classloader"
+  correct: false
+  question: 19
+  
+Question(20):
+  text: "What is an example of a non-Agile development methodology?"
+  answers: [20A, 20B, 20C, 20D]
+
+Answer(20A):
+  text: "Fishing"
+  correct: false
+  question: 20
+
+Answer(20B):
+  text: "Kanban"
+  correct: false
+  question: 20
+
+Answer(20C):
+  text: "Scrum"
+  correct: false
+  question: 20
+
+Answer(20D):
+  text: "Waterfall"
+  correct: true
+  question: 20
+  
+Question(21):
+  text: "If you don't want an object parameter to be serializable, what Java keyword do you use?"
+  answers: [21A, 21B, 21C, 21D]
+
+Answer(21A):
+  text: "private"
+  correct: false
+  question: 21
+
+Answer(21B):
+  text: "volatile"
+  correct: false
+  question: 21
+
+Answer(21C):
+  text: "transient"
+  correct: true
+  question: 21
+
+Answer(21D):
+  text: "static"
+  correct: false
+  question: 21
+  
+Question(22):
+  text: "What Java class can only be instantiated once?"
+  answers: [22A, 22B, 22C, 22D]
+
+Answer(22A):
+  text: "Singleton"
+  correct: true
+  question: 22
+
+Answer(22B):
+  text: "Servlet"
+  correct: false
+  question: 22
+
+Answer(22C):
+  text: "Constructor"
+  correct: false
+  question: 22
+
+Answer(22D):
+  text: "Main"
+  correct: false
+  question: 22
+  
+Question(23):
+  text: "Which of the following exceptionsis a checked exception?"
+  answers: [23A, 23B, 23C, 23D]
+
+Answer(23A):
+  text: "RuntimeException"
+  correct: false
+  question: 23
+
+Answer(23B):
+  text: "NamingException"
+  correct: true
+  question: 23
+
+Answer(23C):
+  text: "IllegalArguementException"
+  correct: false
+  question: 23
+
+Answer(23D):
+  text: "NumberFormatException"
+  correct: false
+  question: 23
+  
+Question(24):
+  text: "What state does a Thread enter when it terminates processing?"
+  answers: [24A, 24B, 24C, 24D]
+
+Answer(24A):
+  text: "Stopped"
+  correct: false
+  question: 24
+
+Answer(24B):
+  text: "Killed"
+  correct: false
+  question: 24
+
+Answer(24C):
+  text: "Waiting"
+  correct: false
+  question: 24
+
+Answer(24D):
+  text: "Dead"
+  correct: true
+  question: 24
+  
+Question(25):
+  text: "What is the direct super class of the Exception class?"
+  answers: [25A, 25B, 25C, 25D]
+
+Answer(25A):
+  text: "Runnable"
+  correct: false
+  question: 25
+
+Answer(25B):
+  text: "Object"
+  correct: false
+  question: 25
+
+Answer(25C):
+  text: "Throwable"
+  correct: true
+  question: 25
+
+Answer(25D):
+  text: "Error"
+  correct: false
+  question: 25
+  
+Question(26):
+  text: "How many JVMs can be run on one machine?"
+  answers: [26A, 26B, 26C, 26D]
+
+Answer(26A):
+  text: "Unlimited"
+  correct: true
+  question: 26
+
+Answer(26B):
+  text: "One"
+  correct: false
+  question: 26
+
+Answer(26C):
+  text: "Two"
+  correct: false
+  question: 26
+
+Answer(26D):
+  text: "Operating system dependent"
+  correct: false
+  question: 26
+  
+Question(27):
+  text: "What area of memory are all Java classes allocated to at runtime?"
+  answers: [27A, 27B, 27C, 27D]
+
+Answer(27A):
+  text: "Virtual Memory"
+  correct: false
+  question: 27
+
+Answer(27B):
+  text: "Heap"
+  correct: true
+  question: 27
+
+Answer(27C):
+  text: "Permanent Generation"
+  correct: false
+  question: 27
+
+Answer(27D):
+  text: "Tenured Generation"
+  correct: false
+  question: 27
+  
