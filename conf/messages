@@ -10,6 +10,7 @@ register.termsOfUse=By checking this box and submitting this form, I agree to th
 register.accept=I accept terms of use
 register.submit=Join game!
 game.start.title=%s vs. %s
+scoreboard.topscores=Current top scores
 error.mandatoryRegistrationFields=Please provide mandatory registration details
 error.termsOfUse=Accept to continue
 error.emailAreadyRegistred=This email adress was already registred with a different name and/or twitter

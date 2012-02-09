@@ -26,9 +26,14 @@ public class Scoreboard extends Controller {
         render(scores);
     }
     
-    public static void all() {
+    public static void arena() {
+        render();
+    }
+    
+    public static void list(int max) {
+        if (max == 0) max = ArenaScoreboard.MAX_RESULTS;
         Query query = JPA.em().createQuery("select s from Score s order by s.numberOfPoints desc");
-        List<Score> scores = query.setMaxResults(ArenaScoreboard.MAX_RESULTS).getResultList();
-        render("@arena", scores);
+        List<Score> scores = query.setMaxResults(max).getResultList();
+        render("@list", scores);
     }
 }

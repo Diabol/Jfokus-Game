@@ -1,0 +1,14 @@
+#{extends 'main.html' /}
+<div id="content">
+    main page content here...
+</div>
+<script type="text/javascript">
+    var actionIndex = 0;
+    (function next() {
+      $.get('/info/roll?actionIndex='+actionIndex, function(data) {
+        $('#content').html(data);
+        actionIndex = ++actionIndex % ${numberOfActions};
+        setTimeout(next, ${rollTime}*1000);
+      });
+    })();
+</script>
