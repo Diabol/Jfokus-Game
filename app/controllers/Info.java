@@ -10,6 +10,7 @@ import java.util.Random;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import play.data.validation.Match;
 import play.mvc.Controller;
 
 /**
@@ -20,12 +21,12 @@ public class Info extends Controller {
     
     public static final List<String> actions = new ArrayList<String>(Arrays.asList(new String[]{"comeAndPlay","rules","topScores"}));
 
-    public static void index(String rollTime) {
+    public static void index(String rollTime, @Match("1080p|720p") String resolution) {
         if (rollTime==null) {
             rollTime = "10";
         }
         int numberOfActions = actions.size();
-        render(rollTime,numberOfActions);
+        render(rollTime,numberOfActions,resolution);
     }
     
     public static void roll(int actionIndex) {
@@ -50,7 +51,7 @@ public class Info extends Controller {
     }
     
     public static void topScores() {
-        Scoreboard.list(20);
+        Scoreboard.list(14);
     }
     
 }

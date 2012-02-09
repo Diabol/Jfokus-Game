@@ -9,7 +9,7 @@
 body {
     background-color: #000000;
     color: #dcecf9;
-    font-size: 14pt;
+    font-size: 15pt;
     text-align: center;
 }
 
@@ -34,9 +34,9 @@ a.nostyle {
 }
 
 #mainBody {
-    min-height: 400px;
+    min-height: 500px;
     height: auto !important;
-    height: 400px;
+    height: 500px;
     width: 800px;
     margin-left: auto;
     margin-right: auto;

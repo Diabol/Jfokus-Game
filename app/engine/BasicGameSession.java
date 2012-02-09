@@ -19,6 +19,7 @@ public class BasicGameSession implements GameSession {
 
     public BasicGameSession(List<Question> questions) {
         gameRound = new GameRound(new LinkedHashSet<Question>(questions), null, 180);
+        gameRound.startTime = new Date();
         GameRound.em().persist(gameRound);
         play.Logger.info("Started BasicGameSession with " + questions.size() + " number of questions");
     }
@@ -111,6 +112,7 @@ public class BasicGameSession implements GameSession {
         if (playerSession != null) {
             playerSession.stop();
         }
+        gameRound.stopTime = new Date();
         gameRound.save();
     }
 

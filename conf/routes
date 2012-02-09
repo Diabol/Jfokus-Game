@@ -7,13 +7,17 @@ GET     /                                       Application.index
 POST    /question                               Question.question
 GET     /question                               Application.index
 GET     /score                                  Scoreboard.index
-GET     /scoreboard                             Scoreboard.all
+GET     /scoreboard                             Scoreboard.arena
+GET     /info                                   Info.index
+GET     /admin                                  Admin.index
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
 
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public
+
+*       /                                       module:secure
 
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}

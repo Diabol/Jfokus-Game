@@ -76,4 +76,18 @@ public class SimpleGameEngine implements GameEngine {
     public GameSession getGameSession(String gameSessionId){
         return gameSessions.get(gameSessionId);
     }
+
+    public Collection<GameSession> getAllGameSessions() {
+        return gameSessions.values();
+    }
+
+    public void stopGameSession(String gameSessionId) {
+        GameSession gameSession = gameSessions.get(gameSessionId);
+        if (gameSession!=null) {
+            for (Player player : gameSession.getPlayers()) {
+                gameSession.stop(player.getId().toString());
+            }
+            gameSessions.remove(gameSessionId);
+        }
+    }
 }

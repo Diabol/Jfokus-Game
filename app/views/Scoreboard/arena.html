@@ -1,4 +1,14 @@
 #{extends 'main.html' /}
+#{if resolution}
+    #{set 'moreStyles'}
+            #{if resolution=='720p'}
+                #{stylesheet '720p.css' /}
+            #{/if}
+            #{elseif resolution=='1080p'}
+                #{stylesheet '1080p.css' /}
+            #{/elseif}
+    #{/set}
+#{/if}
 <script type="text/javascript">
     (function refresh() {
       $.get('/scoreboard/list', function(data) {

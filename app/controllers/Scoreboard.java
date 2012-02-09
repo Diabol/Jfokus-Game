@@ -8,6 +8,7 @@ import javax.persistence.Query;
 
 import engine.GameSession;
 import models.Score;
+import play.data.validation.Match;
 import play.db.jpa.JPA;
 import play.mvc.Controller;
 
@@ -26,8 +27,8 @@ public class Scoreboard extends Controller {
         render(scores);
     }
     
-    public static void arena() {
-        render();
+    public static void arena(@Match("1080p|720p") String resolution) {
+        render(resolution);
     }
     
     public static void list(int max) {
