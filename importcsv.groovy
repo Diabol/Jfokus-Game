@@ -17,11 +17,11 @@ class Answer {
 }
 
 for (line in data) {
-    def question = line.Question.trim()
-    def correct = line.'Correct Answer'.trim()
-    def false1 = line.'False Answer 1'.trim()
-    def false2 = line.'False Answer 2'.trim()
-    def false3 = line.'False Answer 3'.trim()
+    def question = line.Question.trim().replaceAll("\"","\"\"")
+    def correct = line.'Correct Answer'.trim().replaceAll("\"","\"\"")
+    def false1 = line.'False Answer 1'.trim().replaceAll("\"","\"\"")
+    def false2 = line.'False Answer 2'.trim().replaceAll("\"","\"\"")
+    def false3 = line.'False Answer 3'.trim().replaceAll("\"","\"\"")
 
     def list = new ArrayList<Answer>()
     list.add(new Answer(answer: correct, correct: true))
@@ -30,34 +30,34 @@ for (line in data) {
     list.add(new Answer(answer: false3, correct: false))
 
     println("Question($number):")
-    println("  text: $question")
+    println("  text: \"$question\"")
     println("  answers: [" + number + "A, "+ number + "B, " + number + "C, " + number + "D]")
 
     def answer = list.remove(random.nextInt(4))
     println("  ")
     println("Answer("+ number +"A):")
-    println("  text: $answer.answer")
+    println("  text: \"$answer.answer\"")
     println("  correct: $answer.correct")
     println("  question: $number")
 
     answer = list.remove(random.nextInt(3))
     println("  ")
     println("Answer("+ number +"B):")
-    println("  text: $answer.answer")
+    println("  text: \"$answer.answer\"")
     println("  correct: $answer.correct")
     println("  question: $number")
 
     answer = list.remove(random.nextInt(2))
     println("  ")
     println("Answer("+ number +"C):")
-    println("  text: $answer.answer")
+    println("  text: \"$answer.answer\"")
     println("  correct: $answer.correct")
     println("  question: $number")
 
     answer = list.remove(random.nextInt(1))
     println("  ")
     println("Answer("+ number +"D):")
-    println("  text: $answer.answer")
+    println("  text: \"$answer.answer\"")
     println("  correct: $answer.correct")
     println("  question: $number")
 
