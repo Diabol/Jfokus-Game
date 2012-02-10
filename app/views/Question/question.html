@@ -2,9 +2,10 @@
 <br/>
 <h1 class="question">${question.text}</h1>
 <br/>
+<form id="finish" action="@{Question.answer()}" method="POST"/>
 #{list items:question.answers, as:'answer'}
     <div class="answer">
-        <form action="@{Question.answer()}" method="GET">
+        <form id="${question.id}" action="@{Question.answer()}" method="POST">
             <input type="hidden" name="question" value="${question.id}"/>
             <input type="hidden" name="answer" value="${answer.id}"/>
             <input type="submit" class="submit" value="${answer.text}" />
@@ -16,18 +17,32 @@
     $(document).ready(function(){
         var lastAnswer = $("#lastAnswerWasCorrect").text();
         if(lastAnswer === "true"){
-            $("#mainBody").animate({ backgroundColor: "green" }, "fast", function(){
+            $("#mainBody").animate({ backgroundColor: "#005500" }, "fast", function(){
                 $("#mainBody").animate({ backgroundColor: "black" }, "fast");
             });
         }
         else if(lastAnswer === "false") {
-            $("#mainBody").animate({ backgroundColor: "red" }, "fast", function(){
+            $("#mainBody").animate({ backgroundColor: "#660000" }, "fast", function(){
                 $("#mainBody").animate({ backgroundColor: "black" }, "fast");
             });
         }
         });
 </script>
+<script type="text/javascript">
+    (function timeLeft() {
+        $.post('/game/timeLeft', function(data) {
+            var status = $('#time').html();
+            if (data == '-1') {
+                document.forms["finish"].submit();
+            } else {
+                $('#time').html(data);
+                setTimeout(timeLeft, 1000);
+            }
+        });
+    })();
+</script>
 <br/>
+<div id="time" style="font-size: 32px"></div>
 <div class="status">
     <div class="correct">${correct}</div>
     <div class="score">${score}</div>

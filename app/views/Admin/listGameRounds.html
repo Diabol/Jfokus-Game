@@ -1,0 +1,21 @@
+#{extends 'main.html' /}
+<h1>Completed Games</h1>
+<br/>
+#{if games.size() > 0}
+<table >
+    #{list games, as:'game'}
+        <tr>
+            <td>${game.startTime?.format('yyyy-MM-dd hh:mm')} - ${game.stopTime?.format('hh:mm')}</td>
+            #{list game.scores, as:'score'}
+                <td style="padding-left: 20px">${score.player.twitter}</td>
+                <td style="padding-left: 20px">${score.numberOfPoints}&nbsp;(${score.numberOfCorrectAnswers}/${score.numberOfAnswers})</td>
+            #{/list}           
+        </tr>
+    #{/list}
+</table>
+#{/if}
+#{else}
+    <div class="empty">
+        There are currently no game rounds in database.
+    </div>
+#{/else}

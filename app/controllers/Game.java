@@ -1,9 +1,12 @@
 package controllers;
 
+import engine.BasicGameSession;
 import engine.GameEngine;
 import engine.GameSession;
 import java.util.List;
 import javax.inject.Inject;
+
+import engine.PlayerSession;
 import models.Player;
 import play.mvc.Controller;
 
@@ -34,6 +37,19 @@ public class Game extends Controller {
         String gameSessionId = session.get("gameSessionId");
         renderText(gameEngine.getGameSession(gameSessionId).isDone());
     }
+
+    public static String timeLeft() {
+        String gameSessionId = session.get("gameSessionId");
+        GameSession gameSession = gameEngine.getGameSession(gameSessionId);
+        PlayerSession playerSession = gameSession.getPlayerSession(session.get("playerId"));
+        Long timeLeft = playerSession.getSecondsLeft();
+        if (timeLeft <= 0) {
+            gameSession.stop(playerSession.getId());
+            return "-1";
+        }
+        return timeLeft.toString();
+    }
+    
     public static void start() {
         String gameSessionId = session.get("gameSessionId");
         GameSession gameSession = gameEngine.getGameSession(gameSessionId);

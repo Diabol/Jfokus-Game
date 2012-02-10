@@ -1,0 +1,18 @@
+#{extends 'main.html' /}
+<h1>Admin Page</h1>
+<br/>
+#{form @Admin.clearGameSessions()}
+    <span>Number of on-going game sessions: ${numberOfSessions}</span><br/>
+    <input type="submit" class="submit" value="Clear all game sessions" />
+#{/form}
+<br/>
+#{form @Admin.listPlayers()}
+<span>Number of registred players: ${numberOfPlayers}</span><br/>
+    <input type="submit" class="submit" value="List all players" />
+#{/form}
+<br/>
+#{form @Admin.listGameRounds()}
+<span>Number of completed game rounds: ${numberOfGameRounds}</span><br/>
+    <input type="submit" class="submit" value="List all game rounds" />
+#{/form}
+

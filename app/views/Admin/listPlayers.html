@@ -1,0 +1,19 @@
+#{extends 'main.html' /}
+<h1>Registred players</h1>
+<br/>
+#{if players.size() > 0}
+<table >
+    #{list items:players, as:'player'}
+        <tr>
+            <td>${player.name}</td>
+            <td style="padding-left: 20px">${player.twitter}</td>
+            <td style="padding-left: 20px">${player.email}</td>
+        </tr>
+    #{/list}
+</table>
+#{/if}
+#{else}
+    <div class="empty">
+        There are currently no players registred.
+    </div>
+#{/else}

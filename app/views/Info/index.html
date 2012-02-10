@@ -9,14 +9,16 @@
             #{/elseif}
     #{/set}
 #{/if}
+<div id="content">
+    main page content here...
+</div>
 <script type="text/javascript">
-    (function refresh() {
-      $.get('/scoreboard/list', function(data) {
-        $('#scoreList').html(data);
-        setTimeout(refresh, 5000);
+    var actionIndex = 0;
+    (function next() {
+      $.get('/info/roll?actionIndex='+actionIndex, function(data) {
+        $('#content').html(data);
+        actionIndex = ++actionIndex % ${numberOfActions};
+        setTimeout(next, ${rollTime}*1000);
       });
     })();
 </script>
-<div id="scoreList">
-    top score list here...
-</div>

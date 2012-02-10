@@ -4,3 +4,4 @@ require:
     - play -> guice 1.2
     - play
     - play -> spring 1.0.2
+    - play -> secure

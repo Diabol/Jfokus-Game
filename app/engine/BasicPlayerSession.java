@@ -10,7 +10,9 @@ import models.Score;
  * @author <a href="mailto:tommy@diabol.se">Tommy Tynj&auml;</a>
  */
 public class BasicPlayerSession implements PlayerSession {
-    
+
+    private static long TIME_THRESHOLD_MS = 65 * 1000;
+
     private Player player;
     private Score score;
     private Date start;
@@ -85,6 +87,25 @@ public class BasicPlayerSession implements PlayerSession {
     }
     
     public boolean isDone(){
-        return (stop != null) ? true : false;
+        Long timeElapsed = getSecondsLeft();
+        play.Logger.info("BasicPlayerSession.isDone: Time left for player " + player.id + ": " + timeElapsed + "s");
+        if (timeElapsed <= 0) {
+            stop();
+            play.Logger.info("Stopping session for player " + getId());
+        }
+        return (stop != null);
+    }
+
+    public Long getSecondsLeft() {
+        Long timeElapsed = System.currentTimeMillis() - getStartTime().getTime();
+        return (TIME_THRESHOLD_MS - timeElapsed) / 1000L;
+    }
+
+    public Date getStartTime() {
+        return start;
+    }
+
+    public Date getStoppedTime() {
+        return stop;
     }
 }

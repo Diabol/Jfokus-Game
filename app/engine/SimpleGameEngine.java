@@ -27,7 +27,7 @@ public class SimpleGameEngine implements GameEngine {
             }
         }
         play.Logger.info("Creating new GameSession");
-        GameSession session = new BasicGameSession(loadQuestions(NUMBER_OF_QUESTIONS));
+        GameSession session = new BasicGameSession(loadQuestions());
         gameSessions.put(session.getId().toString(), session);
         return addPlayerToSession(session, player);
     }
@@ -64,25 +64,30 @@ public class SimpleGameEngine implements GameEngine {
         return gameSessions.get(gameSessionId).getScores();
     }
 
-    private List<Question> loadQuestions(int numberOfQuestions) {
-        play.Logger.info("Loading " + numberOfQuestions + " questions");
+    private List<Question> loadQuestions() {
+        play.Logger.info("Loading questions");
         List<Question> allQuestions = Question.findAll();
-        play.Logger.info("Total number of quetions in DB: " + allQuestions.size());
-        List<Question> questions = null;
-        if (allQuestions.size() > numberOfQuestions) {
-            int amount = Math.min(numberOfQuestions, allQuestions.size());
-            questions = new ArrayList<Question>();
-            Collections.shuffle(allQuestions);
-            for (int i = 0; i < amount; i++) {
-                questions.add(allQuestions.get(i));
-            }
-        } else {
-            questions = allQuestions;
-        }
-        return questions;
+        play.Logger.info("Total number of questions in DB: " + allQuestions.size());
+        List<Question> questions = new ArrayList<Question>(allQuestions);
+        Collections.shuffle(questions);
+        return Collections.unmodifiableList(questions);
     }
 
     public GameSession getGameSession(String gameSessionId){
         return gameSessions.get(gameSessionId);
+    }
+
+    public Collection<GameSession> getAllGameSessions() {
+        return gameSessions.values();
+    }
+
+    public void stopGameSession(String gameSessionId) {
+        GameSession gameSession = gameSessions.get(gameSessionId);
+        if (gameSession!=null) {
+            for (Player player : gameSession.getPlayers()) {
+                gameSession.stop(player.getId().toString());
+            }
+            gameSessions.remove(gameSessionId);
+        }
     }
 }

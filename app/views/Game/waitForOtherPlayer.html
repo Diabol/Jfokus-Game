@@ -5,7 +5,7 @@
 <h2 class="field" id="status">...</h2>
 <script type="text/javascript">
     (function check() {
-      $.get('/game/isdone', function(data) {
+      $.post('/game/isdone', function(data) {
         var started = (data == 'true');
         if (started) {
             window.location='/score';

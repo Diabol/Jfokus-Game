@@ -1,0 +1,18 @@
+body {
+    font-size: 16pt;
+}
+
+#mainBody {
+    min-height: 550px;
+    height: 550px;
+    width: 1100px;
+}
+
+#header {
+    width: 1100px;
+}
+
+#footer {
+    width: 1100px;
+}
+

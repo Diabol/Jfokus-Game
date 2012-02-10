@@ -19,6 +19,7 @@ public class BasicGameSession implements GameSession {
 
     public BasicGameSession(List<Question> questions) {
         gameRound = new GameRound(new LinkedHashSet<Question>(questions), null, 180);
+        gameRound.startTime = new Date();
         GameRound.em().persist(gameRound);
         play.Logger.info("Started BasicGameSession with " + questions.size() + " number of questions");
     }
@@ -68,10 +69,12 @@ public class BasicGameSession implements GameSession {
     @Override
     public void handleAnswer(String playerId, Question question, boolean correct) {
         PlayerSession playerSession = getPlayerSession(playerId);
-        if (correct) {
-            playerSession.addCorrectAnswer();
-        } else {
-            playerSession.addErroneousAnswer();
+        if (!playerSession.isDone()) {
+            if (correct) {
+                playerSession.addCorrectAnswer();
+            } else {
+                playerSession.addErroneousAnswer();
+            }
         }
     }
 
@@ -85,17 +88,19 @@ public class BasicGameSession implements GameSession {
         play.Logger.info("Getting next question for player: " + playerId);
         PlayerSession session = getPlayerSession(playerId);
         Question question = null;
-        if (session != null) {
+        if (session != null && !session.isDone()) {
             question = session.getNextQuestion();
         }
         play.Logger.info("Next question is: " + (question == null ? "null" : question.getId() + " = " + question.text));
         return question;
     }
 
-    private PlayerSession getPlayerSession(String playerId) {
-        for (PlayerSession session : playerSessions) {
-            if (session.getPlayer().id.equals(Long.parseLong(playerId))) {
-                return session;
+    public PlayerSession getPlayerSession(String playerId) {
+        if (playerSessions != null && playerId != null) {
+            for (PlayerSession session : playerSessions) {
+                if (session.getPlayer().id.equals(Long.parseLong(playerId))) {
+                    return session;
+                }
             }
         }
         return null;
@@ -104,7 +109,10 @@ public class BasicGameSession implements GameSession {
     public void stop(String playerId) {
         gameRound = GameRound.findById(gameRound.getId());
         PlayerSession playerSession = getPlayerSession(playerId);
-        playerSession.stop();
+        if (playerSession != null) {
+            playerSession.stop();
+        }
+        gameRound.stopTime = new Date();
         gameRound.save();
     }
 
