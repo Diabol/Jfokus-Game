@@ -146,8 +146,9 @@ input {
 .scoreboard {
     overflow: hidden;
     float : left;
-    text-align: left;
+    text-align: center;
 }
+
 
 .score {
     text-align: center;
@@ -172,4 +173,8 @@ input {
 
 .bottombutton {
     margin-top: 165px;
+}
+
+#registerDetails {
+    text-align: left;
 }
