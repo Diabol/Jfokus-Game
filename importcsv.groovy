@@ -30,8 +30,8 @@ for (line in data) {
     list.add(new Answer(answer: false3, correct: false))
 
     println("Question($number):")
-    println("text: \"$question\"")
-    println("answers: [" + number + "A, "+ number + "B, " + number + "C, " + number + "D]")
+    println("  text: \"$question\"")
+    println("  answers: [" + number + "A, "+ number + "B, " + number + "C, " + number + "D]")
 
     def answer = list.remove(random.nextInt(4))
     println("  ")
