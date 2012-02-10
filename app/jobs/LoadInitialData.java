@@ -16,8 +16,6 @@ import play.test.Fixtures;
 @OnApplicationStart
 public class LoadInitialData extends Job {
      public void doJob() {
-        if(Question.count() == 0) {
-            Fixtures.loadModels("questions.yml");
-        }
+        Fixtures.loadModels("questions.yml");
     }
 }
