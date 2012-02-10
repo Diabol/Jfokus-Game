@@ -63,6 +63,12 @@ a.nostyle {
 .error {
     text-align: center;
     color: rgb(255, 70, 74);
+    display: block;
+}
+
+.hasError {
+    border-color: rgb(255, 70, 74);
+    border-width: 2px;
 }
 
 label {
