@@ -17,11 +17,11 @@ class Answer {
 }
 
 for (line in data) {
-    def question = line.Question.trim().replaceAll("\"","\"\"")
-    def correct = line.'Correct Answer'.trim().replaceAll("\"","\"\"")
-    def false1 = line.'False Answer 1'.trim().replaceAll("\"","\"\"")
-    def false2 = line.'False Answer 2'.trim().replaceAll("\"","\"\"")
-    def false3 = line.'False Answer 3'.trim().replaceAll("\"","\"\"")
+    def question = line.Question.trim().replaceAll("\"","")
+    def correct = line.'Correct Answer'.trim().replaceAll("\"","")
+    def false1 = line.'False Answer 1'.trim().replaceAll("\"","")
+    def false2 = line.'False Answer 2'.trim().replaceAll("\"","")
+    def false3 = line.'False Answer 3'.trim().replaceAll("\"","")
 
     def list = new ArrayList<Answer>()
     list.add(new Answer(answer: correct, correct: true))
