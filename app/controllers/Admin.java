@@ -5,10 +5,12 @@ import engine.GameSession;
 import java.util.Collection;
 import java.util.List;
 import javax.inject.Inject;
+import models.Configuration;
 import models.GameRound;
 import models.Player;
 import play.mvc.Controller;
 import play.mvc.With;
+import util.ConfigManager;
 
 /**
  *
@@ -27,7 +29,9 @@ public class Admin extends Controller {
         long numberOfPlayers = Player.count();
         long numberOfGameRounds = GameRound.count();
         
-        render(numberOfSessions, numberOfPlayers, numberOfGameRounds);
+        Configuration config = ConfigManager.get();
+        play.Logger.info("Got config: %s", config.toString());
+        render(numberOfSessions, numberOfPlayers, numberOfGameRounds, config);
     }
     
     public static void clearGameSessions() {
@@ -46,5 +50,12 @@ public class Admin extends Controller {
     public static void listGameRounds() {
         List<GameRound> games = GameRound.findAll();
         render(games);
+    }
+    
+    public static void saveConfiguration(Configuration config) {
+        play.Logger.info("Saving configuration: %s", config.toString());
+        config.save();
+        ConfigManager.reload();
+        index();
     }
 }

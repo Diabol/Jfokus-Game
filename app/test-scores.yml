@@ -1,0 +1,107 @@
+# you describe your data using the YAML notation here
+# and then load them using Fixtures.load("data.yml")
+
+Player(daniel):
+  name : Daniel Fröding
+  email : test@test
+  twitter : danielfroding
+  
+Player(tommy):
+  name : Tommy
+  email : test@test
+  twitter : tommysdk 
+  
+Player(andreas):
+  name : Andreas Rehn
+  email : test@test
+  twitter : andreasrehn
+
+Player(kalle):
+  name : Kalle Kula
+  email : test@test
+  twitter : kallekula
+  
+Score(1):
+    numberOfAnswers: 10
+    numberOfPoints: 100
+    player: daniel 
+
+Score(2):
+    numberOfAnswers: 10
+    numberOfPoints: 200
+    player: daniel 
+
+Score(3):
+    numberOfAnswers: 10
+    numberOfPoints: 30
+    player: tommy 
+    
+Score(4):
+    numberOfAnswers: 10
+    numberOfPoints: 30
+    player: andreas
+    
+Score(5):
+    numberOfAnswers: 10
+    numberOfPoints: 36
+    player: kalle
+    
+Score(6):
+    numberOfAnswers: 10
+    numberOfPoints: 136
+    player: kalle
+    
+Score(7):
+    numberOfAnswers: 10
+    numberOfPoints: 45
+    player: kalle
+    
+Score(8):
+    numberOfAnswers: 10
+    numberOfPoints: 32
+    player: kalle
+    
+Score(9):
+    numberOfAnswers: 10
+    numberOfPoints: 64
+    player: kalle
+    
+Score(10):
+    numberOfAnswers: 10
+    numberOfPoints: 67
+    player: kalle
+    
+Score(11):
+    numberOfAnswers: 10
+    numberOfPoints: 87
+    player: kalle
+    
+Score(12):
+    numberOfAnswers: 10
+    numberOfPoints: 23
+    player: kalle
+    
+Score(13):
+    numberOfAnswers: 10
+    numberOfPoints: 56
+    player: kalle
+    
+Score(14):
+    numberOfAnswers: 10
+    numberOfPoints: 123
+    player: kalle
+    
+Score(15):
+    numberOfAnswers: 10
+    numberOfPoints: 345
+    player: kalle
+    
+Score(16):
+    numberOfAnswers: 10
+    numberOfPoints: 231
+    player: kalle
+    
+Score(17):
+    numberOfAnswers: 10
+    numberOfPoints: 234
+    player: kalle

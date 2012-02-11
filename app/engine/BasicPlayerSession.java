@@ -2,16 +2,20 @@ package engine;
 
 import java.util.Date;
 import java.util.Iterator;
+import javax.inject.Inject;
 import models.Question;
 import models.Player;
 import models.Score;
+import util.ConfigManager;
 
 /**
  * @author <a href="mailto:tommy@diabol.se">Tommy Tynj&auml;</a>
  */
 public class BasicPlayerSession implements PlayerSession {
-
-    private static long TIME_THRESHOLD_MS = 65 * 1000;
+    
+    private static long TIME_THRESHOLD_MS = ConfigManager.get().gameSessionLength * 1000;
+    private static int POINTS_FOR_CORRECT = ConfigManager.get().pointsForCorrectAnswer;
+    private static int POINTS_FOR_ERRONEOUS = ConfigManager.get().pointsForCorrectAnswer;
 
     private Player player;
     private Score score;
@@ -34,7 +38,7 @@ public class BasicPlayerSession implements PlayerSession {
     public void addCorrectAnswer() {
         Score s = Score.findById(score.getId());
         s.numberOfCorrectAnswers++;
-        s.numberOfPoints++;
+        s.numberOfPoints = s.numberOfPoints + POINTS_FOR_CORRECT;
         update(s);
     }
 
@@ -42,6 +46,7 @@ public class BasicPlayerSession implements PlayerSession {
     public void addErroneousAnswer() {
         Score s = Score.findById(score.getId());
         s.numberOfIncorrectAnswers++;
+        if (s.numberOfPoints>0) s.numberOfPoints = s.numberOfPoints + POINTS_FOR_ERRONEOUS;
         update(s);
     }
 

@@ -7,12 +7,14 @@ import models.Score;
 import play.db.jpa.JPA;
 
 import java.util.*;
+import javax.inject.Inject;
+import util.ConfigManager;
 
 /**
  * @author <a href="mailto:tommy@diabol.se">Tommy Tynj&auml;</a>
  */
 public class BasicGameSession implements GameSession {
-
+    
     private final Set<PlayerSession> playerSessions = new LinkedHashSet<PlayerSession>();
     private GameRound gameRound;
     private int numberOfPlayersPerRound = 2;

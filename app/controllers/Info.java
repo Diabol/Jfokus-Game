@@ -10,8 +10,10 @@ import java.util.Random;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.inject.Inject;
 import play.data.validation.Match;
 import play.mvc.Controller;
+import util.ConfigManager;
 
 /**
  *
@@ -22,8 +24,11 @@ public class Info extends Controller {
     public static final List<String> actions = new ArrayList<String>(Arrays.asList(new String[]{"comeAndPlay","rules","topScores"}));
 
     public static void index(String rollTime, @Match("1080p|720p") String resolution) {
+        if (resolution==null) {
+            resolution = ConfigManager.get().defaultArenaResolution;
+        }
         if (rollTime==null) {
-            rollTime = "10";
+            rollTime = String.valueOf(ConfigManager.get().infoPanelRollTime);
         }
         int numberOfActions = actions.size();
         render(rollTime,numberOfActions,resolution);

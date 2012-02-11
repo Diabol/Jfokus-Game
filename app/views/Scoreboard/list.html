@@ -1,23 +1,22 @@
 <h1>&{'scoreboard.topscores'}</h1>
 <br/>
 #{if scores.size() > 0}
-<div class="scoreboard">
+<table>
     #{list items:scores, as:'score'}
-        <div class="score">
-            <p class="name">
+        <tr>
+            <td class="name">
                 #{if score.player.twitter != null}
                     ${score.player.twitter}
                 #{/if}
                 #{else}
                     ${score.player.name}
                 #{/else}
-            </p>
-            <p class="points">
+            </td>
+            <td class="points">
                 ${score.numberOfPoints}
-            </p>
-        </div>
-        <br />
+            </td>
+        </tr>
     #{/list}
-</div>
+</table>
 <br/>
 #{/if}

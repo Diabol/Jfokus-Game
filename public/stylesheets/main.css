@@ -115,11 +115,15 @@ input {
     clear: none;
 }
 
+/*
 .score {
     float: right;
     display: inline;
     clear: none;
+    text-align: center;
+    margin: 0 auto;
 }
+*/
 
 .submit {
     width: 500px;
@@ -137,37 +141,34 @@ input {
     border-radius: 5px 5px 5px 5px;
 }
 
+.smallButton {
+    width: auto;
+    padding: 5px;
+}
+
 .infos {
     padding-left: 20%;
     padding-right: 20%;
     font-size: 0.8em;
 }
 
+/*
 .scoreboard {
     overflow: hidden;
     float : left;
     text-align: center;
 }
-
-
-.score {
-    text-align: center;
-    margin: 0 auto;
-}
+*/
 
 .name {
     width: 680px;
-    display: block;
-    float: left;
     text-align: left;
     margin-left: 50px;
 }
 
 .points {
-    width: 20px;
+    width: 100px;
     margin-right: 50px;
-    display: block;
-    float: left;
     text-align: right;
 }
 
