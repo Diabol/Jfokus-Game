@@ -37,5 +37,7 @@ public interface GameSession {
     public void stop(String playerId);
     
     public boolean isDone();
+    
+    public Player getWinner();
 
 }

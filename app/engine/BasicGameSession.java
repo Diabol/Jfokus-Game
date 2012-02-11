@@ -128,4 +128,22 @@ public class BasicGameSession implements GameSession {
         }
         return true;
     }
+
+    public Player getWinner() {
+        Player winner = null;
+        if (isDone()) {
+            PlayerSession winnerSession = null;
+            int topScore = 0;
+            for(PlayerSession playerSession : playerSessions){
+                if (winnerSession==null || playerSession.getScore().numberOfPoints > winnerSession.getScore().numberOfPoints) {
+                    winnerSession = playerSession;
+                }
+            }
+            if (winnerSession!=null) {
+                winner = winnerSession.getPlayer();
+            }
+        }
+        return winner;
+    }
+    
 }

@@ -2,13 +2,21 @@
 <h1>Match score</h1>
 <br/>
 #{if scores.size() > 0}
+<table>
     #{list items:scores, as:'score'}
-    <div class="status">
-    ${score.player.name} - ${score.numberOfPoints}
-    </div>
+    <tr class="status">
+        <td class="statusName">${score.player.name}</td>
+        <td class="statusPoints">${score.numberOfPoints}</td>
+        <td class="statusDetails">(${score.numberOfCorrectAnswers}/${score.numberOfAnswers})</td>
+    </tr>
    #{/list}
+</table>
 #{/if}
-<br />
+<br /><br /><br/>
+<h2>
+#{if isWinner}&{'isWinner'}#{/if}
+#{else}&{'isLooser'}#{/else}
+</h2>
 <div class="bottombutton">
     <form action="@{Application.index()}" method="GET">
         <input type="submit" class="submit" value="New game" />

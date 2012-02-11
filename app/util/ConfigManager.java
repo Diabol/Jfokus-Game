@@ -6,6 +6,7 @@ package util;
 
 import models.Configuration;
 import play.db.jpa.GenericModel;
+import play.test.Fixtures;
 
 /**
  *
@@ -26,4 +27,5 @@ public class ConfigManager {
     public static void reload() {
         config = Configuration.findById(1L);
     }
+    
 }

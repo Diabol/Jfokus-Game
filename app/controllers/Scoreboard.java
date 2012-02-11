@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import javax.persistence.Query;
 
 import engine.GameSession;
+import models.Player;
 import models.Score;
 import play.data.validation.Match;
 import play.db.jpa.JPA;
@@ -24,7 +25,11 @@ public class Scoreboard extends Controller {
             render("@Application.index");
         }
         List<Score> scores = gameEngine.getScores(gameSessionId);
-        render(scores);
+        GameSession gameSesson = gameEngine.getGameSession(gameSessionId);
+        Player winner = gameSession.getWinner();
+        String playerId = session.get("playerId");
+        boolean isWinner = (winner!=null && winner.id.equals(Long.parseLong(playerId)));
+        render(scores, isWinner);
     }
     
     public static void arena(@Match("1080p|720p") String resolution) {

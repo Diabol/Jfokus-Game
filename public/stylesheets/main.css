@@ -107,6 +107,7 @@ input {
     color: #D2D2D2;
     font-size: 1.5em;
     font-weight: bold;
+    text-align: left;
 }
 
 .correct {
@@ -172,8 +173,24 @@ input {
     text-align: right;
 }
 
+.statusName {
+    margin-left: 20px;
+    fint-size: 0.9em;
+    width: 300px;
+}
+
+.statusPoints {
+    margin-left: 20px;
+    width: 50px;
+}
+
+.statusDetails {
+    margin-left: 20px;
+    font-size: 0.7em;
+}
+
 .bottombutton {
-    margin-top: 165px;
+    margin-top: 145px;
 }
 
 #registerDetails {

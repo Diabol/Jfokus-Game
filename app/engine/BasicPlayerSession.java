@@ -15,7 +15,7 @@ public class BasicPlayerSession implements PlayerSession {
     
     private static long TIME_THRESHOLD_MS = ConfigManager.get().gameSessionLength * 1000;
     private static int POINTS_FOR_CORRECT = ConfigManager.get().pointsForCorrectAnswer;
-    private static int POINTS_FOR_ERRONEOUS = ConfigManager.get().pointsForCorrectAnswer;
+    private static int POINTS_FOR_ERRONEOUS = ConfigManager.get().pointsForInCorrectAnswer;
 
     private Player player;
     private Score score;
@@ -37,6 +37,7 @@ public class BasicPlayerSession implements PlayerSession {
     @Override
     public void addCorrectAnswer() {
         Score s = Score.findById(score.getId());
+        play.Logger.debug("correct answer, current points: %s", s.numberOfPoints);
         s.numberOfCorrectAnswers++;
         s.numberOfPoints = s.numberOfPoints + POINTS_FOR_CORRECT;
         update(s);
@@ -45,8 +46,9 @@ public class BasicPlayerSession implements PlayerSession {
     @Override
     public void addErroneousAnswer() {
         Score s = Score.findById(score.getId());
+        play.Logger.debug("incorrect answer, current points: %s", s.numberOfPoints);
         s.numberOfIncorrectAnswers++;
-        if (s.numberOfPoints>0) s.numberOfPoints = s.numberOfPoints + POINTS_FOR_ERRONEOUS;
+        s.numberOfPoints = s.numberOfPoints + POINTS_FOR_ERRONEOUS;
         update(s);
     }
 
@@ -54,6 +56,7 @@ public class BasicPlayerSession implements PlayerSession {
         score.numberOfAnswers++;
         score.save();
         this.score = score;
+        play.Logger.debug("Score %s updated to points: %s", score.id, score.numberOfPoints);
     }
 
     @Override
@@ -89,6 +92,11 @@ public class BasicPlayerSession implements PlayerSession {
 
     public void stop() {
         stop = new Date();
+        if (this.score.numberOfPoints < 0) {
+            this.score.numberOfPoints=0;
+            this.score.merge();
+            this.score.save();
+        }
     }
     
     public boolean isDone(){

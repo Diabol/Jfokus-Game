@@ -17,7 +17,7 @@ import play.test.Fixtures;
 @OnApplicationStart
 public class LoadInitialData extends Job {
      public void doJob() {
-        Fixtures.delete(Question.class, Configuration.class);
+        //Fixtures.delete(Question.class, Configuration.class);
         Fixtures.loadModels("questions.yml");
         Fixtures.loadModels("configuration.yml");
         //Fixtures.loadModels("test-scores.yml");
