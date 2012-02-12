@@ -61,7 +61,7 @@ public class Application extends Controller {
         Player player = null;
         List<Player> players = Player.find("byEmail", email.toLowerCase()).fetch();
         if (players.isEmpty()) {
-            player = new Player(name, email.toLowerCase(), formatTwitterHandle(twitter));
+            player = new Player(name, email.toLowerCase(), twitter);
             Player.em().persist(player);
         } else {
             if (players.size() == 1 && isSamePlayer(name, email, twitter, players.get(0))) {
@@ -89,12 +89,12 @@ public class Application extends Controller {
         else return string;
     }
 
-    public static boolean isSamePlayer(String name, String email, String twitter, Player player) {
+    public static boolean isSamePlayer(String name, String email, String nick, Player player) {
         final String vname = emptyIfNull(name);
         final String vemail = emptyIfNull(email);
-        final String vtwitter = emptyIfNull(formatTwitterHandle(twitter));
-        final String ptwitter = emptyIfNull(formatTwitterHandle(player.twitter));
+        final String vnick = emptyIfNull(nick);
+        final String ptwitter = emptyIfNull(player.twitter);
         
-        return vname.equalsIgnoreCase(player.name) && vemail.equalsIgnoreCase(player.email) && vtwitter.equalsIgnoreCase(ptwitter);
+        return vname.equalsIgnoreCase(player.name) && vemail.equalsIgnoreCase(player.email) && vnick.equalsIgnoreCase(ptwitter);
     }
 }
