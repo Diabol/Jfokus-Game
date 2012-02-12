@@ -13,7 +13,7 @@ import util.ConfigManager;
  */
 public class BasicPlayerSession implements PlayerSession {
     
-    private static long TIME_THRESHOLD_MS = ConfigManager.get().gameSessionLength * 1000;
+    private static long TIME_THRESHOLD_MS = (ConfigManager.get().gameSessionLength + 6) * 1000;
     private static int POINTS_FOR_CORRECT = ConfigManager.get().pointsForCorrectAnswer;
     private static int POINTS_FOR_ERRONEOUS = ConfigManager.get().pointsForInCorrectAnswer;
 
