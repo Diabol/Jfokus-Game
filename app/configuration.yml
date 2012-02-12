@@ -7,3 +7,5 @@ Configuration(1):
     pointsForCorrectAnswer :  2
     pointsForInCorrectAnswer : -1
     defaultArenaResolution : 720p
+    welcomeText : <h1>Win an iPad!</h1><br/><p>Come and play Diabol Jfokus Quiz</p>
+    rulesText : <h1>Game Rules</h1><br/><p>...</p>

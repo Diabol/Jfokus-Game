@@ -1,0 +1,41 @@
+#{extends 'main.html' /}
+<h1>Application Configuration</h1>
+<br/>
+#{form @Admin.saveConfiguration()}
+    <input type="hidden" name="config.id" value="${config?.id}">
+<table class="config">    
+    <tr>
+        <td><label for="gameSessionLength">Game session length (sec)</label></td>
+        <td><input type="text" id="gameSessionLength" name="config.gameSessionLength" value="${config?.gameSessionLength}"/></td>
+    </tr>
+    <tr>
+        <td><label for="infoPanelRollTime">Info panel roll-time (sec)</label></td>
+        <td><input type="text" id="infoPanelRollTime" name="config.infoPanelRollTime" value="${config?.infoPanelRollTime}"/></td>
+    </tr>
+    <tr>
+        <td><label for="pointsForCorrectAnswer">Points for correct answer</label></td>
+        <td><input type="text" id="pointsForCorrectAnswer" name="config.pointsForCorrectAnswer" value="${config?.pointsForCorrectAnswer}"/></td>
+    </tr>
+    <tr>
+        <td><label for="pointsForInCorrectAnswer">Points for incorrect answer</label></td>
+        <td><input type="text" id="pointsForInCorrectAnswer" name="config.pointsForInCorrectAnswer" value="${config?.pointsForInCorrectAnswer}"/></td>
+    </tr>
+    <tr>
+        <td><label for="defaultArenaResolution">Default arena resolution</label></td>
+        <td><input type="text" id="defaultArenaResolution" name="config.defaultArenaResolution" value="${config?.defaultArenaResolution}"/></td>
+    </tr>
+    <tr>
+        <td><label for="welcomeText">Welcome page text</label></td>
+        <td><textarea rows="5" cols="50" id="welcomeText" name="config.welcomeText">${config?.welcomeText}</textarea></td>
+    </tr>
+    <tr>
+        <td><label for="rulesText">Rules page text</label></td>
+        <td><textarea rows="5" cols="50" id="rulesText" name="config.rulesText">${config?.rulesText}</textarea></td>
+    </tr>
+</table>
+    <input type="submit" class="submit smallButton" value="Save" />
+#{/form}
+<br/><br/>
+#{form @Admin.index()}
+    <input type="submit" class="submit smallButton" value="Back" />
+#{/form}

@@ -3,8 +3,8 @@ Question(1):
   answers: [1A, 1B, 1C, 1D]
   
 Answer(1A):
-  text: "Content repository API for Java"
-  correct: true
+  text: "XQuery API for Java"
+  correct: false
   question: 1
   
 Answer(1B):
@@ -13,12 +13,12 @@ Answer(1B):
   question: 1
   
 Answer(1C):
-  text: "JavaServer Faces 1.2"
-  correct: false
+  text: "Content repository API for Java"
+  correct: true
   question: 1
   
 Answer(1D):
-  text: "XQuery API for Java"
+  text: "JavaServer Faces 1.2"
   correct: false
   question: 1
 
@@ -27,8 +27,8 @@ Question(2):
   answers: [2A, 2B, 2C, 2D]
   
 Answer(2A):
-  text: "JavaServer Faces 2.0"
-  correct: false
+  text: "Java Contexts and Dependency Injection"
+  correct: true
   question: 2
   
 Answer(2B):
@@ -37,12 +37,12 @@ Answer(2B):
   question: 2
   
 Answer(2C):
-  text: "Java Contexts and Dependency Injection"
-  correct: true
+  text: "Java Persistence API 2.0"
+  correct: false
   question: 2
   
 Answer(2D):
-  text: "Java Persistence API 2.0"
+  text: "JavaServer Faces 2.0"
   correct: false
   question: 2
 
@@ -51,22 +51,22 @@ Question(3):
   answers: [3A, 3B, 3C, 3D]
   
 Answer(3A):
-  text: "JDK 1.2"
-  correct: true
-  question: 3
-  
-Answer(3B):
-  text: "JDK 1.1"
-  correct: false
-  question: 3
-  
-Answer(3C):
   text: "JDK 1.3"
   correct: false
   question: 3
   
-Answer(3D):
+Answer(3B):
+  text: "JDK 1.2"
+  correct: true
+  question: 3
+  
+Answer(3C):
   text: "JDK 1.4"
+  correct: false
+  question: 3
+  
+Answer(3D):
+  text: "JDK 1.1"
   correct: false
   question: 3
 
@@ -75,17 +75,17 @@ Question(4):
   answers: [4A, 4B, 4C, 4D]
   
 Answer(4A):
-  text: "Novell"
-  correct: false
-  question: 4
-  
-Answer(4B):
   text: "Facebook"
   correct: true
   question: 4
   
-Answer(4C):
+Answer(4B):
   text: "Google"
+  correct: false
+  question: 4
+  
+Answer(4C):
+  text: "Novell"
   correct: false
   question: 4
   
@@ -99,18 +99,18 @@ Question(5):
   answers: [5A, 5B, 5C, 5D]
   
 Answer(5A):
-  text: "*"
+  text: "<>"
   correct: false
   question: 5
   
 Answer(5B):
-  text: "?"
-  correct: true
+  text: "*"
+  correct: false
   question: 5
   
 Answer(5C):
-  text: "<>"
-  correct: false
+  text: "?"
+  correct: true
   question: 5
   
 Answer(5D):
@@ -123,22 +123,22 @@ Question(6):
   answers: [6A, 6B, 6C, 6D]
   
 Answer(6A):
-  text: "Rick Hickey"
-  correct: true
-  question: 6
-  
-Answer(6B):
-  text: "Alan Kay"
-  correct: false
-  question: 6
-  
-Answer(6C):
   text: "Jevgeni Kabanov"
   correct: false
   question: 6
   
-Answer(6D):
+Answer(6B):
   text: "Simon Peyton Jones"
+  correct: false
+  question: 6
+  
+Answer(6C):
+  text: "Rick Hickey"
+  correct: true
+  question: 6
+  
+Answer(6D):
+  text: "Alan Kay"
   correct: false
   question: 6
 
@@ -147,12 +147,12 @@ Question(7):
   answers: [7A, 7B, 7C, 7D]
   
 Answer(7A):
-  text: "Pascal"
+  text: "Smalltalk"
   correct: false
   question: 7
   
 Answer(7B):
-  text: "Smalltalk"
+  text: "Pascal"
   correct: false
   question: 7
   
@@ -171,7 +171,7 @@ Question(8):
   answers: [8A, 8B, 8C, 8D]
   
 Answer(8A):
-  text: "Intelligent Business Machines"
+  text: "Innovative Business Machines"
   correct: false
   question: 8
   
@@ -181,12 +181,12 @@ Answer(8B):
   question: 8
   
 Answer(8C):
-  text: "Innovative Business Machines"
+  text: "Inventive Business Machines"
   correct: false
   question: 8
   
 Answer(8D):
-  text: "Inventive Business Machines"
+  text: "Intelligent Business Machines"
   correct: false
   question: 8
 
@@ -200,13 +200,13 @@ Answer(9A):
   question: 9
   
 Answer(9B):
-  text: "A framework for integration tests"
-  correct: true
+  text: "An IDE for Android development"
+  correct: false
   question: 9
   
 Answer(9C):
-  text: "An IDE for Android development"
-  correct: false
+  text: "A framework for integration tests"
+  correct: true
   question: 9
   
 Answer(9D):
@@ -243,22 +243,22 @@ Question(11):
   answers: [11A, 11B, 11C, 11D]
   
 Answer(11A):
-  text: "Martin Odersky"
-  correct: false
-  question: 11
-  
-Answer(11B):
-  text: "Yukihiro Matsumoto"
-  correct: false
-  question: 11
-  
-Answer(11C):
   text: "James Gosling"
   correct: true
   question: 11
   
-Answer(11D):
+Answer(11B):
+  text: "Martin Odersky"
+  correct: false
+  question: 11
+  
+Answer(11C):
   text: "James Strachan"
+  correct: false
+  question: 11
+  
+Answer(11D):
+  text: "Yukihiro Matsumoto"
   correct: false
   question: 11
 
@@ -267,13 +267,13 @@ Question(12):
   answers: [12A, 12B, 12C, 12D]
   
 Answer(12A):
-  text: "NullReferenceException"
+  text: "NoSuchObjectFound"
   correct: false
   question: 12
   
 Answer(12B):
-  text: "NullPointerException"
-  correct: true
+  text: "NullReferenceException"
+  correct: false
   question: 12
   
 Answer(12C):
@@ -282,8 +282,8 @@ Answer(12C):
   question: 12
   
 Answer(12D):
-  text: "NoSuchObjectFound"
-  correct: false
+  text: "NullPointerException"
+  correct: true
   question: 12
 
 Question(13):
@@ -301,12 +301,12 @@ Answer(13B):
   question: 13
   
 Answer(13C):
-  text: "Method Rewriting"
+  text: "Method Overriding"
   correct: false
   question: 13
   
 Answer(13D):
-  text: "Method Overriding"
+  text: "Method Rewriting"
   correct: false
   question: 13
 
@@ -320,17 +320,17 @@ Answer(14A):
   question: 14
   
 Answer(14B):
-  text: "Method Casting"
+  text: "Method Rewriting"
   correct: false
   question: 14
   
 Answer(14C):
-  text: "Method Overloading"
+  text: "Method Casting"
   correct: false
   question: 14
   
 Answer(14D):
-  text: "Method Rewriting"
+  text: "Method Overloading"
   correct: false
   question: 14
 
@@ -339,22 +339,22 @@ Question(15):
   answers: [15A, 15B, 15C, 15D]
   
 Answer(15A):
-  text: "Relegating"
+  text: "Converting"
   correct: false
   question: 15
   
 Answer(15B):
-  text: "Casting"
-  correct: true
-  question: 15
-  
-Answer(15C):
   text: "Switching"
   correct: false
   question: 15
   
+Answer(15C):
+  text: "Casting"
+  correct: true
+  question: 15
+  
 Answer(15D):
-  text: "Converting"
+  text: "Relegating"
   correct: false
   question: 15
 
@@ -363,8 +363,8 @@ Question(16):
   answers: [16A, 16B, 16C, 16D]
   
 Answer(16A):
-  text: "Distress"
-  correct: false
+  text: "Deadlock"
+  correct: true
   question: 16
   
 Answer(16B):
@@ -373,12 +373,12 @@ Answer(16B):
   question: 16
   
 Answer(16C):
-  text: "Deadlock"
-  correct: true
+  text: "Block"
+  correct: false
   question: 16
   
 Answer(16D):
-  text: "Block"
+  text: "Distress"
   correct: false
   question: 16
 
@@ -387,23 +387,23 @@ Question(17):
   answers: [17A, 17B, 17C, 17D]
   
 Answer(17A):
-  text: "Object"
-  correct: true
-  question: 17
-  
-Answer(17B):
-  text: "Class"
+  text: "String"
   correct: false
   question: 17
   
-Answer(17C):
+Answer(17B):
   text: "Main"
   correct: false
   question: 17
   
-Answer(17D):
-  text: "String"
+Answer(17C):
+  text: "Class"
   correct: false
+  question: 17
+  
+Answer(17D):
+  text: "Object"
+  correct: true
   question: 17
 
 Question(18):
@@ -411,22 +411,22 @@ Question(18):
   answers: [18A, 18B, 18C, 18D]
   
 Answer(18A):
-  text: "Interface"
-  correct: true
-  question: 18
-  
-Answer(18B):
-  text: "Abstract Class"
-  correct: false
-  question: 18
-  
-Answer(18C):
   text: "Inner Class"
   correct: false
   question: 18
   
-Answer(18D):
+Answer(18B):
+  text: "Interface"
+  correct: true
+  question: 18
+  
+Answer(18C):
   text: "Enum"
+  correct: false
+  question: 18
+  
+Answer(18D):
+  text: "Abstract Class"
   correct: false
   question: 18
 
@@ -435,23 +435,23 @@ Question(19):
   answers: [19A, 19B, 19C, 19D]
   
 Answer(19A):
-  text: "System Classloader"
-  correct: false
-  question: 19
-  
-Answer(19B):
   text: "Main Classloader"
   correct: false
   question: 19
   
-Answer(19C):
+Answer(19B):
   text: "Extensions Classloader"
   correct: false
   question: 19
   
-Answer(19D):
+Answer(19C):
   text: "Bootstrap Classloader"
   correct: true
+  question: 19
+  
+Answer(19D):
+  text: "System Classloader"
+  correct: false
   question: 19
 
 Question(20):
@@ -464,17 +464,17 @@ Answer(20A):
   question: 20
   
 Answer(20B):
-  text: "Lean"
+  text: "Scrum"
   correct: false
   question: 20
   
 Answer(20C):
-  text: "Kanban"
+  text: "Lean"
   correct: false
   question: 20
   
 Answer(20D):
-  text: "Scrum"
+  text: "Kanban"
   correct: false
   question: 20
 
@@ -483,23 +483,23 @@ Question(21):
   answers: [21A, 21B, 21C, 21D]
   
 Answer(21A):
-  text: "volatile"
-  correct: false
-  question: 21
-  
-Answer(21B):
   text: "static"
   correct: false
   question: 21
   
-Answer(21C):
+Answer(21B):
   text: "private"
   correct: false
   question: 21
   
-Answer(21D):
+Answer(21C):
   text: "transient"
   correct: true
+  question: 21
+  
+Answer(21D):
+  text: "volatile"
+  correct: false
   question: 21
 
 Question(22):
@@ -507,12 +507,12 @@ Question(22):
   answers: [22A, 22B, 22C, 22D]
   
 Answer(22A):
-  text: "Singleton"
-  correct: true
+  text: "Servlet"
+  correct: false
   question: 22
   
 Answer(22B):
-  text: "Servlet"
+  text: "Main"
   correct: false
   question: 22
   
@@ -522,8 +522,8 @@ Answer(22C):
   question: 22
   
 Answer(22D):
-  text: "Main"
-  correct: false
+  text: "Singleton"
+  correct: true
   question: 22
 
 Question(23):
@@ -536,18 +536,18 @@ Answer(23A):
   question: 23
   
 Answer(23B):
-  text: "NamingException"
-  correct: true
-  question: 23
-  
-Answer(23C):
   text: "NumberFormatException"
   correct: false
   question: 23
   
-Answer(23D):
+Answer(23C):
   text: "IllegalArgumentException"
   correct: false
+  question: 23
+  
+Answer(23D):
+  text: "NamingException"
+  correct: true
   question: 23
 
 Question(24):
@@ -555,13 +555,13 @@ Question(24):
   answers: [24A, 24B, 24C, 24D]
   
 Answer(24A):
-  text: "Stopped"
+  text: "Killed"
   correct: false
   question: 24
   
 Answer(24B):
-  text: "Killed"
-  correct: false
+  text: "Dead"
+  correct: true
   question: 24
   
 Answer(24C):
@@ -570,8 +570,8 @@ Answer(24C):
   question: 24
   
 Answer(24D):
-  text: "Dead"
-  correct: true
+  text: "Stopped"
+  correct: false
   question: 24
 
 Question(25):
@@ -584,17 +584,17 @@ Answer(25A):
   question: 25
   
 Answer(25B):
-  text: "Runnable"
-  correct: false
-  question: 25
-  
-Answer(25C):
   text: "Throwable"
   correct: true
   question: 25
   
-Answer(25D):
+Answer(25C):
   text: "Error"
+  correct: false
+  question: 25
+  
+Answer(25D):
+  text: "Runnable"
   correct: false
   question: 25
 
@@ -603,22 +603,22 @@ Question(26):
   answers: [26A, 26B, 26C, 26D]
   
 Answer(26A):
-  text: "Unlimited"
-  correct: true
-  question: 26
-  
-Answer(26B):
   text: "Two"
   correct: false
   question: 26
   
-Answer(26C):
-  text: "Operating system dependent"
+Answer(26B):
+  text: "One"
   correct: false
   question: 26
   
+Answer(26C):
+  text: "Unlimited"
+  correct: true
+  question: 26
+  
 Answer(26D):
-  text: "One"
+  text: "Operating system dependent"
   correct: false
   question: 26
 
@@ -627,23 +627,23 @@ Question(27):
   answers: [27A, 27B, 27C, 27D]
   
 Answer(27A):
-  text: "Virtual Memory"
-  correct: false
-  question: 27
-  
-Answer(27B):
   text: "Permanent Generation"
   correct: false
   question: 27
   
+Answer(27B):
+  text: "Virtual Memory"
+  correct: false
+  question: 27
+  
 Answer(27C):
-  text: "Heap"
-  correct: true
+  text: "Tenured Generation"
+  correct: false
   question: 27
   
 Answer(27D):
-  text: "Tenured Generation"
-  correct: false
+  text: "Heap"
+  correct: true
   question: 27
 
 Question(28):
@@ -651,22 +651,22 @@ Question(28):
   answers: [28A, 28B, 28C, 28D]
   
 Answer(28A):
-  text: "There are no variables with state"
-  correct: true
-  question: 28
-  
-Answer(28B):
   text: "Superior thread pooling"
   correct: false
   question: 28
   
+Answer(28B):
+  text: "There are no variables with state"
+  correct: true
+  question: 28
+  
 Answer(28C):
-  text: "It has stateful functions"
+  text: "It has no functions"
   correct: false
   question: 28
   
 Answer(28D):
-  text: "It has no functions"
+  text: "It has stateful functions"
   correct: false
   question: 28
 
@@ -675,23 +675,23 @@ Question(29):
   answers: [29A, 29B, 29C, 29D]
   
 Answer(29A):
-  text: "Blade server"
-  correct: false
-  question: 29
-  
-Answer(29B):
   text: "Version control system"
   correct: false
   question: 29
   
-Answer(29C):
-  text: "Web server"
+Answer(29B):
+  text: "Blade server"
   correct: false
   question: 29
   
-Answer(29D):
+Answer(29C):
   text: "Key-value store"
   correct: true
+  question: 29
+  
+Answer(29D):
+  text: "Web server"
+  correct: false
   question: 29
 
 Question(30):
@@ -699,13 +699,13 @@ Question(30):
   answers: [30A, 30B, 30C, 30D]
   
 Answer(30A):
-  text: "Windows Phone 7.5"
-  correct: true
+  text: "iOS 5"
+  correct: false
   question: 30
   
 Answer(30B):
-  text: "Android 2.3"
-  correct: false
+  text: "Windows Phone 7.5"
+  correct: true
   question: 30
   
 Answer(30C):
@@ -714,7 +714,7 @@ Answer(30C):
   question: 30
   
 Answer(30D):
-  text: "iOS 5"
+  text: "Android 2.3"
   correct: false
   question: 30
 
@@ -723,12 +723,12 @@ Question(31):
   answers: [31A, 31B, 31C, 31D]
   
 Answer(31A):
-  text: "Palo Alto, California"
+  text: "Sacramento, California"
   correct: false
   question: 31
   
 Answer(31B):
-  text: "Sacramento, California"
+  text: "Oakland, California"
   correct: false
   question: 31
   
@@ -738,7 +738,7 @@ Answer(31C):
   question: 31
   
 Answer(31D):
-  text: "Oakland, California"
+  text: "Palo Alto, California"
   correct: false
   question: 31
 
@@ -747,22 +747,22 @@ Question(32):
   answers: [32A, 32B, 32C, 32D]
   
 Answer(32A):
-  text: "Stateful Session Beans"
-  correct: false
-  question: 32
-  
-Answer(32B):
   text: "Entity Beans"
   correct: true
   question: 32
   
+Answer(32B):
+  text: "Stateful Session Beans"
+  correct: false
+  question: 32
+  
 Answer(32C):
-  text: "Stateless Session Beans"
+  text: "Message Driven Beans"
   correct: false
   question: 32
   
 Answer(32D):
-  text: "Message Driven Beans"
+  text: "Stateless Session Beans"
   correct: false
   question: 32
 
@@ -776,8 +776,8 @@ Answer(33A):
   question: 33
   
 Answer(33B):
-  text: "Lambda expressions"
-  correct: true
+  text: "Strings in switch"
+  correct: false
   question: 33
   
 Answer(33C):
@@ -786,8 +786,8 @@ Answer(33C):
   question: 33
   
 Answer(33D):
-  text: "Strings in switch"
-  correct: false
+  text: "Lambda expressions"
+  correct: true
   question: 33
 
 Question(34):
@@ -795,22 +795,22 @@ Question(34):
   answers: [34A, 34B, 34C, 34D]
   
 Answer(34A):
-  text: "JSR-168"
-  correct: false
-  question: 34
-  
-Answer(34B):
   text: "JSR-286"
   correct: true
   question: 34
   
-Answer(34C):
+Answer(34B):
   text: "JSR-268"
   correct: false
   question: 34
   
-Answer(34D):
+Answer(34C):
   text: "JSR-186"
+  correct: false
+  question: 34
+  
+Answer(34D):
+  text: "JSR-168"
   correct: false
   question: 34
 
@@ -853,13 +853,13 @@ Answer(36B):
   question: 36
   
 Answer(36C):
-  text: "Yahoo!"
-  correct: false
+  text: "Twitter"
+  correct: true
   question: 36
   
 Answer(36D):
-  text: "Twitter"
-  correct: true
+  text: "Yahoo!"
+  correct: false
   question: 36
 
 Question(37):
@@ -867,22 +867,22 @@ Question(37):
   answers: [37A, 37B, 37C, 37D]
   
 Answer(37A):
-  text: "*"
+  text: "&"
   correct: false
   question: 37
   
 Answer(37B):
+  text: "*"
+  correct: false
+  question: 37
+  
+Answer(37C):
   text: "_"
   correct: true
   question: 37
   
-Answer(37C):
-  text: "/"
-  correct: false
-  question: 37
-  
 Answer(37D):
-  text: "&"
+  text: "/"
   correct: false
   question: 37
 
@@ -891,13 +891,13 @@ Question(38):
   answers: [38A, 38B, 38C, 38D]
   
 Answer(38A):
-  text: "Takuma Sato"
+  text: "Kohsuke Kawaguchi"
   correct: false
   question: 38
   
 Answer(38B):
-  text: "Taiichi Ohno"
-  correct: true
+  text: "Takuma Sato"
+  correct: false
   question: 38
   
 Answer(38C):
@@ -906,8 +906,8 @@ Answer(38C):
   question: 38
   
 Answer(38D):
-  text: "Kohsuke Kawaguchi"
-  correct: false
+  text: "Taiichi Ohno"
+  correct: true
   question: 38
 
 Question(39):
@@ -915,7 +915,7 @@ Question(39):
   answers: [39A, 39B, 39C, 39D]
   
 Answer(39A):
-  text: "Bill Gates"
+  text: "Sergey Brin"
   correct: false
   question: 39
   
@@ -930,7 +930,7 @@ Answer(39C):
   question: 39
   
 Answer(39D):
-  text: "Sergey Brin"
+  text: "Bill Gates"
   correct: false
   question: 39
 
@@ -939,13 +939,13 @@ Question(40):
   answers: [40A, 40B, 40C, 40D]
   
 Answer(40A):
-  text: "rebase"
-  correct: false
+  text: "checkout"
+  correct: true
   question: 40
   
 Answer(40B):
-  text: "checkout"
-  correct: true
+  text: "rebase"
+  correct: false
   question: 40
   
 Answer(40C):
@@ -963,17 +963,17 @@ Question(41):
   answers: [41A, 41B, 41C, 41D]
   
 Answer(41A):
-  text: "Microsoft"
-  correct: false
-  question: 41
-  
-Answer(41B):
   text: "Nienschanz"
   correct: false
   question: 41
   
-Answer(41C):
+Answer(41B):
   text: "Oracle"
+  correct: false
+  question: 41
+  
+Answer(41C):
+  text: "Microsoft"
   correct: false
   question: 41
   
@@ -987,23 +987,23 @@ Question(42):
   answers: [42A, 42B, 42C, 42D]
   
 Answer(42A):
-  text: "Red Hat"
-  correct: true
-  question: 42
-  
-Answer(42B):
-  text: "Blue Hat"
-  correct: false
-  question: 42
-  
-Answer(42C):
   text: "Pizza Hut"
   correct: false
   question: 42
   
-Answer(42D):
+Answer(42B):
   text: "Green Hat"
   correct: false
+  question: 42
+  
+Answer(42C):
+  text: "Blue Hat"
+  correct: false
+  question: 42
+  
+Answer(42D):
+  text: "Red Hat"
+  correct: true
   question: 42
 
 Question(43):
@@ -1011,13 +1011,13 @@ Question(43):
   answers: [43A, 43B, 43C, 43D]
   
 Answer(43A):
-  text: "implements"
+  text: "subclassed"
   correct: false
   question: 43
   
 Answer(43B):
-  text: "subclassed"
-  correct: false
+  text: "extends"
+  correct: true
   question: 43
   
 Answer(43C):
@@ -1026,8 +1026,8 @@ Answer(43C):
   question: 43
   
 Answer(43D):
-  text: "extends"
-  correct: true
+  text: "implements"
+  correct: false
   question: 43
 
 Question(44):
@@ -1045,12 +1045,12 @@ Answer(44B):
   question: 44
   
 Answer(44C):
-  text: "static"
+  text: "abstract"
   correct: false
   question: 44
   
 Answer(44D):
-  text: "abstract"
+  text: "static"
   correct: false
   question: 44
 
@@ -1059,18 +1059,18 @@ Question(45):
   answers: [45A, 45B, 45C, 45D]
   
 Answer(45A):
-  text: "extends"
-  correct: false
-  question: 45
-  
-Answer(45B):
   text: "shares"
   correct: false
   question: 45
   
-Answer(45C):
+Answer(45B):
   text: "satisfies"
   correct: true
+  question: 45
+  
+Answer(45C):
+  text: "extends"
+  correct: false
   question: 45
   
 Answer(45D):
@@ -1083,8 +1083,8 @@ Question(46):
   answers: [46A, 46B, 46C, 46D]
   
 Answer(46A):
-  text: "Red Hat"
-  correct: false
+  text: "Eclipse Foundation"
+  correct: true
   question: 46
   
 Answer(46B):
@@ -1093,8 +1093,8 @@ Answer(46B):
   question: 46
   
 Answer(46C):
-  text: "Eclipse Foundation"
-  correct: true
+  text: "Red Hat"
+  correct: false
   question: 46
   
 Answer(46D):
@@ -1107,8 +1107,8 @@ Question(47):
   answers: [47A, 47B, 47C, 47D]
   
 Answer(47A):
-  text: "NIO client server framework"
-  correct: true
+  text: "Servlet container"
+  correct: false
   question: 47
   
 Answer(47B):
@@ -1117,13 +1117,13 @@ Answer(47B):
   question: 47
   
 Answer(47C):
-  text: "Servlet container"
+  text: "Dependency injection framework"
   correct: false
   question: 47
   
 Answer(47D):
-  text: "Dependency injection framework"
-  correct: false
+  text: "NIO client server framework"
+  correct: true
   question: 47
 
 Question(48):
@@ -1131,23 +1131,23 @@ Question(48):
   answers: [48A, 48B, 48C, 48D]
   
 Answer(48A):
-  text: "500"
-  correct: false
-  question: 48
-  
-Answer(48B):
-  text: "502"
-  correct: true
-  question: 48
-  
-Answer(48C):
   text: "404"
   correct: false
   question: 48
   
-Answer(48D):
+Answer(48B):
+  text: "500"
+  correct: false
+  question: 48
+  
+Answer(48C):
   text: "403"
   correct: false
+  question: 48
+  
+Answer(48D):
+  text: "502"
+  correct: true
   question: 48
 
 Question(49):
@@ -1160,17 +1160,17 @@ Answer(49A):
   question: 49
   
 Answer(49B):
-  text: "52"
+  text: "31"
   correct: false
   question: 49
   
 Answer(49C):
-  text: "45"
+  text: "52"
   correct: false
   question: 49
   
 Answer(49D):
-  text: "31"
+  text: "45"
   correct: false
   question: 49
 
@@ -1179,23 +1179,23 @@ Question(50):
   answers: [50A, 50B, 50C, 50D]
   
 Answer(50A):
-  text: "Blue"
-  correct: false
-  question: 50
-  
-Answer(50B):
-  text: "White"
-  correct: true
-  question: 50
-  
-Answer(50C):
   text: "Red"
   correct: false
   question: 50
   
-Answer(50D):
+Answer(50B):
   text: "Green"
   correct: false
+  question: 50
+  
+Answer(50C):
+  text: "Blue"
+  correct: false
+  question: 50
+  
+Answer(50D):
+  text: "White"
+  correct: true
   question: 50
 
 Question(51):
@@ -1203,8 +1203,8 @@ Question(51):
   answers: [51A, 51B, 51C, 51D]
   
 Answer(51A):
-  text: "Daniel Fröding"
-  correct: true
+  text: "Peter Ferm"
+  correct: false
   question: 51
   
 Answer(51B):
@@ -1218,7 +1218,367 @@ Answer(51C):
   question: 51
   
 Answer(51D):
-  text: "Peter Ferm"
-  correct: false
+  text: "Daniel Fröding"
+  correct: true
   question: 51
+
+Question(52):
+  text: "Which one is NOT one of seven wastes in software development according to Poppendieck?"
+  answers: [52A, 52B, 52C, 52D]
+  
+Answer(52A):
+  text: "Handoffs"
+  correct: false
+  question: 52
+  
+Answer(52B):
+  text: "Extra Features"
+  correct: false
+  question: 52
+  
+Answer(52C):
+  text: "Slack Time"
+  correct: true
+  question: 52
+  
+Answer(52D):
+  text: "Partially Done Work"
+  correct: false
+  question: 52
+
+Question(53):
+  text: "Which of the following is an important principle in Continous Devliery?"
+  answers: [53A, 53B, 53C, 53D]
+  
+Answer(53A):
+  text: "Build once, deploy everywhere"
+  correct: true
+  question: 53
+  
+Answer(53B):
+  text: "Manual testing"
+  correct: false
+  question: 53
+  
+Answer(53C):
+  text: "Feature branches"
+  correct: false
+  question: 53
+  
+Answer(53D):
+  text: "Processes over people"
+  correct: false
+  question: 53
+
+Question(54):
+  text: "Which of the following is NOT a core part of Playframework?"
+  answers: [54A, 54B, 54C, 54D]
+  
+Answer(54A):
+  text: "Groovy"
+  correct: false
+  question: 54
+  
+Answer(54B):
+  text: "JQuery"
+  correct: false
+  question: 54
+  
+Answer(54C):
+  text: "Spring"
+  correct: true
+  question: 54
+  
+Answer(54D):
+  text: "JPA"
+  correct: false
+  question: 54
+
+Question(55):
+  text: "What is CoffeeScript?"
+  answers: [55A, 55B, 55C, 55D]
+  
+Answer(55A):
+  text: "A REST JavaScript library"
+  correct: false
+  question: 55
+  
+Answer(55B):
+  text: "A language that compiles into JavaScript"
+  correct: true
+  question: 55
+  
+Answer(55C):
+  text: "JavaScript for HTML5"
+  correct: false
+  question: 55
+  
+Answer(55D):
+  text: "A home automation framework"
+  correct: false
+  question: 55
+
+Question(56):
+  text: "Closures in Groovy are?"
+  answers: [56A, 56B, 56C, 56D]
+  
+Answer(56A):
+  text: "Limited to specific types"
+  correct: false
+  question: 56
+  
+Answer(56B):
+  text: "Supported by OpenJDK Lambda Project"
+  correct: false
+  question: 56
+  
+Answer(56C):
+  text: "Not supported"
+  correct: false
+  question: 56
+  
+Answer(56D):
+  text: "A core feature of the language"
+  correct: true
+  question: 56
+
+Question(57):
+  text: "Which one is a document oriented database?"
+  answers: [57A, 57B, 57C, 57D]
+  
+Answer(57A):
+  text: "MongoDB"
+  correct: true
+  question: 57
+  
+Answer(57B):
+  text: "Cassandra"
+  correct: false
+  question: 57
+  
+Answer(57C):
+  text: "db4o"
+  correct: false
+  question: 57
+  
+Answer(57D):
+  text: "Neo4J"
+  correct: false
+  question: 57
+
+Question(58):
+  text: "Which is NOT a new feature in Java 7"
+  answers: [58A, 58B, 58C, 58D]
+  
+Answer(58A):
+  text: "Invoke dynamic"
+  correct: false
+  question: 58
+  
+Answer(58B):
+  text: "Diamond operator"
+  correct: false
+  question: 58
+  
+Answer(58C):
+  text: "Multi-catch exceptions"
+  correct: false
+  question: 58
+  
+Answer(58D):
+  text: "Closures"
+  correct: true
+  question: 58
+
+Question(59):
+  text: "According to DevOps, how should the gap between development and operations primarily be solved?"
+  answers: [59A, 59B, 59C, 59D]
+  
+Answer(59A):
+  text: "Nifty tools"
+  correct: false
+  question: 59
+  
+Answer(59B):
+  text: "Better hand-offs"
+  correct: false
+  question: 59
+  
+Answer(59C):
+  text: "DevOps specialists"
+  correct: false
+  question: 59
+  
+Answer(59D):
+  text: "Tighter collaboration"
+  correct: true
+  question: 59
+
+Question(60):
+  text: "Graphite is a cool tool for what?"
+  answers: [60A, 60B, 60C, 60D]
+  
+Answer(60A):
+  text: "Aggregated logging"
+  correct: false
+  question: 60
+  
+Answer(60B):
+  text: "DB migrations"
+  correct: false
+  question: 60
+  
+Answer(60C):
+  text: "Realtime graphing"
+  correct: true
+  question: 60
+  
+Answer(60D):
+  text: "Online analytical processing (OLAP)"
+  correct: false
+  question: 60
+
+Question(61):
+  text: "In Kanban, what is an expedite task?"
+  answers: [61A, 61B, 61C, 61D]
+  
+Answer(61A):
+  text: "An urgent top-prio task"
+  correct: true
+  question: 61
+  
+Answer(61B):
+  text: "A task still in the backlog"
+  correct: false
+  question: 61
+  
+Answer(61C):
+  text: "A task pending on external involvement"
+  correct: false
+  question: 61
+  
+Answer(61D):
+  text: "A task that skips steps in workflow"
+  correct: false
+  question: 61
+
+Question(62):
+  text: "Which one is NOT a Java mocking framework?"
+  answers: [62A, 62B, 62C, 62D]
+  
+Answer(62A):
+  text: "Moq"
+  correct: true
+  question: 62
+  
+Answer(62B):
+  text: "Mockito"
+  correct: false
+  question: 62
+  
+Answer(62C):
+  text: "EasyMock"
+  correct: false
+  question: 62
+  
+Answer(62D):
+  text: "rMock"
+  correct: false
+  question: 62
+
+Question(63):
+  text: "What is the support for websockets in Java EE"
+  answers: [63A, 63B, 63C, 63D]
+  
+Answer(63A):
+  text: "Included in Java EE 6"
+  correct: false
+  question: 63
+  
+Answer(63B):
+  text: "Not planned, rejected by the JCP"
+  correct: false
+  question: 63
+  
+Answer(63C):
+  text: "Planned for Servlets 3.1 / Java EE 7"
+  correct: true
+  question: 63
+  
+Answer(63D):
+  text: "Handled by HTML5"
+  correct: false
+  question: 63
+
+Question(64):
+  text: "With HTML5, polling ajax requests could be replaced with?"
+  answers: [64A, 64B, 64C, 64D]
+  
+Answer(64A):
+  text: "Websockets"
+  correct: true
+  question: 64
+  
+Answer(64B):
+  text: "Canvas element"
+  correct: false
+  question: 64
+  
+Answer(64C):
+  text: "Cross-document messaging"
+  correct: false
+  question: 64
+  
+Answer(64D):
+  text: "JQuery"
+  correct: false
+  question: 64
+
+Question(65):
+  text: "What is Grails?"
+  answers: [65A, 65B, 65C, 65D]
+  
+Answer(65A):
+  text: "Build tool with a Groovy DSL"
+  correct: false
+  question: 65
+  
+Answer(65B):
+  text: "Groovy based desktop framework"
+  correct: false
+  question: 65
+  
+Answer(65C):
+  text: "Web app framework for Groovy"
+  correct: true
+  question: 65
+  
+Answer(65D):
+  text: "Groovy plugin for Eclipse"
+  correct: false
+  question: 65
+
+Question(66):
+  text: "What is Gradle?"
+  answers: [66A, 66B, 66C, 66D]
+  
+Answer(66A):
+  text: "Web app framework for Groovy"
+  correct: false
+  question: 66
+  
+Answer(66B):
+  text: "Build tool with a Groovy DSL"
+  correct: true
+  question: 66
+  
+Answer(66C):
+  text: "Groovy plugin for Eclipse"
+  correct: false
+  question: 66
+  
+Answer(66D):
+  text: "Groovy based desktop framework"
+  correct: false
+  question: 66
 

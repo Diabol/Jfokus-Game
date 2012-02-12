@@ -4,6 +4,7 @@
  */
 package util;
 
+import java.util.List;
 import models.Configuration;
 import play.db.jpa.GenericModel;
 import play.test.Fixtures;
@@ -18,14 +19,16 @@ public class ConfigManager {
     
     public static Configuration get() {
         if (config==null) {
-            config = Configuration.findById(1L);
+            List<Configuration> configurations = Configuration.findAll();
+            config = configurations.get(0);
             play.Logger.info("Loaded configuration: %s", config.toString());
         }
         return config;
     }
     
     public static void reload() {
-        config = Configuration.findById(1L);
+        config = null;
+        get();
     }
     
 }

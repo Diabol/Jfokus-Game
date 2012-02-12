@@ -18,6 +18,8 @@ public class Configuration extends Model {
     public int pointsForCorrectAnswer;
     public int pointsForInCorrectAnswer;
     public String defaultArenaResolution;
+    public String welcomeText;
+    public String rulesText;
 
     public Configuration() {
     }

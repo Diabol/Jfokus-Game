@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import models.Configuration;
 import models.GameRound;
 import models.Player;
+import models.Question;
 import play.mvc.Controller;
 import play.mvc.With;
 import util.ConfigManager;
@@ -28,10 +29,9 @@ public class Admin extends Controller {
         
         long numberOfPlayers = Player.count();
         long numberOfGameRounds = GameRound.count();
+        long numberOfQuestions = Question.count();
         
-        Configuration config = ConfigManager.get();
-        play.Logger.info("Got config: %s", config.toString());
-        render(numberOfSessions, numberOfPlayers, numberOfGameRounds, config);
+        render(numberOfSessions, numberOfPlayers, numberOfGameRounds, numberOfQuestions);
     }
     
     public static void clearGameSessions() {
@@ -52,10 +52,20 @@ public class Admin extends Controller {
         render(games);
     }
     
+    public static void listQuestions() {
+        List<Question> questions = Question.findAll();
+        render(questions);
+    }
+    
+    public static void editConfiguration() {
+        Configuration config = ConfigManager.get();
+        render(config);
+    }
+    
     public static void saveConfiguration(Configuration config) {
         play.Logger.info("Saving configuration: %s", config.toString());
         config.save();
         ConfigManager.reload();
-        index();
+        editConfiguration();
     }
 }

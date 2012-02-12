@@ -1,0 +1,30 @@
+#{extends 'Admin/main.html' /}
+<h2>Questions</h2>
+<br/>
+#{if questions.size() > 0}
+<table class="config">
+    #{list items:questions, as:'q'}
+        <tr>
+            <td>${q.id}</td>
+            <td colspan="2">${q.text}</td>
+        </tr>
+        #{list items:q.answers, as:'a'}
+        <tr>
+            <td></td>
+            <td class="${a.correct?'green':''}">${a.id}</td>
+            <td class="${a.correct?'green':''}">${a.text}</td>
+        </tr>        
+        #{/list}
+        <tr><td colspan="2" style="border-top: 1px solid #dcecf9;"></td></tr>
+    #{/list}
+</table>    
+#{/if}
+#{else}
+    <div class="empty">
+        There are currently no questions in DB.
+    </div>
+#{/else}
+<br/><br/>
+#{form @Admin.index()}
+    <input type="submit" class="submit smallButton" value="Back" />
+#{/form}

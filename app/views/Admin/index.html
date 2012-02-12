@@ -1,5 +1,5 @@
 #{extends 'main.html' /}
-<h1>Admin Page</h1>
+<h2>Admin Page</h2>
 <br/>
 #{form @Admin.clearGameSessions()}
     <span>Number of on-going game sessions: ${numberOfSessions}</span>
@@ -7,34 +7,20 @@
 #{/form}
 <br/>
 #{form @Admin.listPlayers()}
-<span>Number of registred players: ${numberOfPlayers}</span>
+    <span>Number of registred players: ${numberOfPlayers}</span>
     <input type="submit" class="submit smallButton" value="List" />
 #{/form}
 <br/>
 #{form @Admin.listGameRounds()}
-<span>Number of completed game rounds: ${numberOfGameRounds}</span>
+    <span>Number of completed game rounds: ${numberOfGameRounds}</span>
     <input type="submit" class="submit smallButton" value="List" />
 #{/form}
 <br/>
-#{form @Admin.saveConfiguration()}
-<fieldset>
-    <input type="hidden" name="config.id" value="${config?.id}">
-    
-    <label for="gameSessionLength">Game session length (sec)</label>
-    <input type="text" id="gameSessionLength" name="config.gameSessionLength" value="${config?.gameSessionLength}"/>
-    <br/>
-    <label for="infoPanelRollTime">Info panel roll-time (sec)</label>
-    <input type="text" id="infoPanelRollTime" name="config.infoPanelRollTime" value="${config?.infoPanelRollTime}"/>
-    <br/>
-    <label for="pointsForCorrectAnswer">Points for correct answer</label>
-    <input type="text" id="pointsForCorrectAnswer" name="config.pointsForCorrectAnswer" value="${config?.pointsForCorrectAnswer}"/>
-    <br/>
-    <label for="pointsForInCorrectAnswer">Points for incorrect answer</label>
-    <input type="text" id="pointsForInCorrectAnswer" name="config.pointsForInCorrectAnswer" value="${config?.pointsForInCorrectAnswer}"/>
-    <br/>
-    <label for="defaultArenaResolution">Default arena resolution</label>
-    <input type="text" id="defaultArenaResolution" name="config.defaultArenaResolution" value="${config?.defaultArenaResolution}"/>
-    <br/>
-    <input type="submit" class="submit smallButton" value="Save" />
-</fieldset>
+#{form @Admin.listQuestions()}
+    <span>Number of questions: ${numberOfQuestions}</span>
+    <input type="submit" class="submit smallButton" value="List" />
+#{/form}
+<br/>
+#{form @Admin.editConfiguration()}
+    <input type="submit" class="submit smallButton" value="Edit Application Configuration" />
 #{/form}

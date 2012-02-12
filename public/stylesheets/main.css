@@ -87,6 +87,16 @@ input {
     border-radius: 5px 5px 5px 5px;
 }
 
+textarea {
+    text-align: left;
+    font-size: 12pt;
+    background-color: #ffffcc;
+    border: 1px solid #999999;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+
 .field {
     text-align: center;
     margin-top: 5px;
@@ -195,4 +205,13 @@ input {
 
 #registerDetails {
     text-align: left;
+}
+
+.config {
+    text-align: left;
+    vertical-align: top;
+}
+
+.green {
+    color: #66cc00;
 }

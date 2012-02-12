@@ -11,6 +11,7 @@ import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.inject.Inject;
+import models.Configuration;
 import play.data.validation.Match;
 import play.mvc.Controller;
 import util.ConfigManager;
@@ -48,11 +49,13 @@ public class Info extends Controller {
     }
     
     public static void comeAndPlay() {
-        render();
+        String text = ConfigManager.get().welcomeText;
+        render(text);
     }
     
     public static void rules() {
-        render();
+        String text = ConfigManager.get().rulesText;
+        render(text);
     }
     
     public static void topScores() {
