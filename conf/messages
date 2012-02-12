@@ -15,4 +15,4 @@ isWinner=Congratulations!
 isLooser=Better luck next time...
 error.mandatoryRegistrationFields=Please provide mandatory registration details
 error.termsOfUse=Accept to continue
-error.emailAreadyRegistred=This email adress was already registred with a different name and/or twitter
+error.emailAreadyRegistred=This email address was already registred with a different name and/or nick

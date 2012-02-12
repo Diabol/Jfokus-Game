@@ -546,7 +546,7 @@ Answer(23C):
   question: 23
   
 Answer(23D):
-  text: "IllegalArguementException"
+  text: "IllegalArgumentException"
   correct: false
   question: 23
 
