@@ -1,26 +1,26 @@
 #{extends 'main.html' /}
 <h2>Admin Page</h2>
 <br/>
-#{form @Admin.clearGameSessions()}
+#{form @Admin.clearGameSessions(), method:'GET'}
     <span>Number of on-going game sessions: ${numberOfSessions}</span>
     <input type="submit" class="submit smallButton" value="Clear" />
 #{/form}
 <br/>
-#{form @Admin.listPlayers()}
+#{form @Admin.listPlayers(), method:'GET'}
     <span>Number of registred players: ${numberOfPlayers}</span>
     <input type="submit" class="submit smallButton" value="List" />
 #{/form}
 <br/>
-#{form @Admin.listGameRounds()}
+#{form @Admin.listGameRounds(), method:'GET'}
     <span>Number of completed game rounds: ${numberOfGameRounds}</span>
     <input type="submit" class="submit smallButton" value="List" />
 #{/form}
 <br/>
-#{form @Admin.listQuestions()}
+#{form @Admin.listQuestions(), method:'GET'}
     <span>Number of questions: ${numberOfQuestions}</span>
     <input type="submit" class="submit smallButton" value="List" />
 #{/form}
 <br/>
-#{form @Admin.editConfiguration()}
+#{form @Admin.editConfiguration(), method:'GET'}
     <input type="submit" class="submit smallButton" value="Edit Application Configuration" />
 #{/form}

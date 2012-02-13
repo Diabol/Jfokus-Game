@@ -10,6 +10,12 @@
                 <td style="padding-left: 20px">${score.player.twitter}</td>
                 <td style="padding-left: 20px">${score.numberOfPoints}&nbsp;(${score.numberOfCorrectAnswers}/${score.numberOfAnswers})</td>
             #{/list}           
+            <td style="padding-left: 20px">
+                #{form @Admin.deleteGameRound()}
+                    <input type="hidden" name="id" value="${game?.id}"/>
+                    <input type="submit" class="submit smallButton" value="Delete" />
+                #{/form}
+            </td>
         </tr>
     #{/list}
 </table>

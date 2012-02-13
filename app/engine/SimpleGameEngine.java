@@ -69,7 +69,7 @@ public class SimpleGameEngine implements GameEngine {
         List<Question> allQuestions = Question.findAll();
         play.Logger.info("Total number of questions in DB: " + allQuestions.size());
         List<Question> questions = new ArrayList<Question>(allQuestions);
-        Collections.shuffle(questions);
+        Collections.shuffle(questions, new Random(System.currentTimeMillis()));
         return Collections.unmodifiableList(questions);
     }
 

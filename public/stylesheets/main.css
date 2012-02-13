@@ -155,6 +155,7 @@ textarea {
 .smallButton {
     width: auto;
     padding: 5px;
+    font-size: 10pt;
 }
 
 .infos {

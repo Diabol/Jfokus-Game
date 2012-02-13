@@ -52,6 +52,16 @@ public class Admin extends Controller {
         render(games);
     }
     
+    public static void deleteGameRound(Long id) { 
+        if (id != null) {
+            GameRound gameRound = GameRound.findById(id);
+            if (gameRound!=null) {
+                gameRound.delete();
+            }
+        }
+        listGameRounds();
+    }
+    
     public static void listQuestions() {
         List<Question> questions = Question.findAll();
         render(questions);

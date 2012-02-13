@@ -6,6 +6,6 @@ Configuration(1):
     infoPanelRollTime : 20
     pointsForCorrectAnswer :  2
     pointsForInCorrectAnswer : -1
-    defaultArenaResolution : 720p
+    defaultArenaResolution : 1080p
 #    welcomeText : <h1>Welcome to play our Jfokus game and have a chanse to win a Ipad 2</h1><p>The Diabol quizz game is a head to head quizz with multiple choise questions. Challange a friend or just grab the person next to you and come play!</p><p>We built this game for self educational purposes, we all wanted to try out the Play (logga) framework, GitHub and some other stuff....? We spent a couple of evenings at Diabol HQ and this is the result.</p> 
 #    rulesText : <h1>Welcome to play our Jfokus game and have a chanse to win a Ipad 2</h1><br/><h2>Game rules:</h2><p>Register with your email, name, nick or twitter<br/>Wait for your opponent<br/>Answer as many questions as you can within 60 seconds<br/>Right answer increases your score by 2 point<br/>Wrong answer decreases your score by 1 point<br/>Game winner is determined by most correct answers and least wrong answers.<br/>If there are muliple players with the same score we will flip the coin at the end of Jfokus to determine the Ipad 2 winner.<br/></p>
