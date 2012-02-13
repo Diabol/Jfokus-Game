@@ -1,4 +1,4 @@
-#{if text!=null}
+#{if config.rulesText!=null}
     #{verbatim}
         ${text}
     #{/verbatim}
@@ -11,9 +11,9 @@
 <p class="welcome">
 Register with your email, name, nick or twitter
 Wait for your opponent
-Answer as many questions as you can within 60 seconds
-Right answer increases your score by 1 point
-Wrong answer decreases your score by 1 point
+Answer as many questions as you can within ${config.gameSessionLength} seconds
+Right answer increases your score by ${config.pointsForCorrectAnswer}
+Wrong answer decreases your score by ${config.pointsForInCorrectAnswer}
 Game winner is determined by most correct answers and least wrong answers.
 If there are muliple players with the same score we will flip the coin at the end of Jfokus to determine the Ipad 2 winner.
 </p>

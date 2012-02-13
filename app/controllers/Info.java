@@ -54,8 +54,8 @@ public class Info extends Controller {
     }
     
     public static void rules() {
-        String text = ConfigManager.get().rulesText;
-        render(text);
+        Configuration config = ConfigManager.get();
+        render(config);
     }
     
     public static void topScores() {

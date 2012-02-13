@@ -2,7 +2,7 @@
 # and then load them using Fixtures.load("data.yml")
 
 Configuration(1):
-    gameSessionLength : 60
+    gameSessionLength : 90
     infoPanelRollTime : 20
     pointsForCorrectAnswer :  2
     pointsForInCorrectAnswer : -1
