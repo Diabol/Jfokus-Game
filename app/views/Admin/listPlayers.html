@@ -8,6 +8,12 @@
             <td>${player.name}</td>
             <td style="padding-left: 20px">${player.twitter}</td>
             <td style="padding-left: 20px">${player.email}</td>
+            <td style="padding-left: 20px">
+                #{form @Admin.deletePlayer()}
+                    <input type="hidden" name="id" value="${player?.id}"/>
+                    <input type="submit" class="submit smallButton" value="Delete" />
+                #{/form}
+            </td>
         </tr>
     #{/list}
 </table>

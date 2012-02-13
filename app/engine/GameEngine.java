@@ -22,4 +22,5 @@ public interface GameEngine {
     public GameSession getGameSession(String gameSessionId);
     public void stopGameSession(String gameSessionId);
     public Collection<GameSession> getAllGameSessions();
+    public void flushAllGameSessions();
 }

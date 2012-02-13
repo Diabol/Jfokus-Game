@@ -90,4 +90,8 @@ public class SimpleGameEngine implements GameEngine {
             gameSessions.remove(gameSessionId);
         }
     }
+    
+    public void flushAllGameSessions() {
+        gameSessions.clear();
+    }
 }

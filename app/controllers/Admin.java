@@ -35,16 +35,23 @@ public class Admin extends Controller {
     }
     
     public static void clearGameSessions() {
-        Collection<GameSession> onGoingGameSessions = gameEngine.getAllGameSessions();
-        for (GameSession session : onGoingGameSessions) {
-            gameEngine.stopGameSession(session.getId().toString());
-        }
+        gameEngine.flushAllGameSessions();
         index();
     }
     
     public static void listPlayers() {
         List<Player> players = Player.findAll();
         render(players);
+    }
+    
+    public static void deletePlayer(Long id) { 
+        if (id != null) {
+            Player player = Player.findById(id);
+            if (player!=null) {
+                player.delete();
+            }
+        }
+        listPlayers();
     }
     
     public static void listGameRounds() {
@@ -56,6 +63,7 @@ public class Admin extends Controller {
         if (id != null) {
             GameRound gameRound = GameRound.findById(id);
             if (gameRound!=null) {
+                gameEngine.stopGameSession(String.valueOf(gameRound.id));
                 gameRound.delete();
             }
         }
