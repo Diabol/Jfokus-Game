@@ -1,5 +1,5 @@
 body {
-    font-size: 18pt;
+    font-size: 20pt;
 }
 
 #mainBody {
@@ -16,3 +16,15 @@ body {
     width: 1600px;
 }
 
+h1.welcome {
+  margin-top: 100px;  
+}
+
+h2.welcome {
+  margin-top: 100px;  
+}
+
+p.welcome {
+    margin-left: 100px;
+    margin-right: 100px;
+}

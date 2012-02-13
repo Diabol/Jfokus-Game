@@ -18,7 +18,9 @@ public class Configuration extends Model {
     public int pointsForCorrectAnswer;
     public int pointsForInCorrectAnswer;
     public String defaultArenaResolution;
+    @Column(length=1024) 
     public String welcomeText;
+    @Column(length=1024)
     public String rulesText;
 
     public Configuration() {

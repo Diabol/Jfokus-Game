@@ -1,3 +1,20 @@
-#{verbatim}
-    ${text}
-#{/verbatim}
+#{if text!=null}
+    #{verbatim}
+        ${text}
+    #{/verbatim}
+#{/if}
+#{else}
+<h1 class="welcome">Play our Jfokus game and have a chanse to win a Ipad 2</h1>
+<br/>
+<h2 class="welcome">Game rules:</h2>
+<br/>
+<p class="welcome">
+Register with your email, name, nick or twitter
+Wait for your opponent
+Answer as many questions as you can within 60 seconds
+Right answer increases your score by 1 point
+Wrong answer decreases your score by 1 point
+Game winner is determined by most correct answers and least wrong answers.
+If there are muliple players with the same score we will flip the coin at the end of Jfokus to determine the Ipad 2 winner.
+</p>
+#{/else}
